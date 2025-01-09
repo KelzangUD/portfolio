@@ -18,7 +18,6 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundPosition: "center",
   backgroundSize: "contain",
   [theme.breakpoints.up("sm")]: {
-    // marginTop: theme.spacing(10),
     height: 500,
   },
   ...(theme.palette.mode === "dark" && {

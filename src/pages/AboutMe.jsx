@@ -1,7 +1,5 @@
 import React from "react";
-import Intro from "../components/Intro";
-import TechStacks from "../components/TechStacks";
-import ProfessionalJourney from "../components/ProfessionalJourney";
+import { Intro, TechStacks, ProfessionalJourney } from "../layout/index";
 
 const AboutMe = () => {
   return (

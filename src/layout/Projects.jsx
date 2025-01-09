@@ -32,7 +32,7 @@ const StyledBox = styled("div")(({ theme }) => ({
   }),
 }));
 
-export default function ProjectsSection() {
+export default function Projects() {
   return (
     <Container maxWidth="lg">
       <Box id="logoCollection" sx={{ py: { xs: 0, md: 4 } }}>

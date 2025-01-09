@@ -1,12 +1,11 @@
 import React from "react";
-import Hero from "../components/Hero";
-import ProjectsSection from "../components/ProjectsSection";
+import { Hero, Projects } from "../layout/index";
 
 function Home() {
   return (
     <>
       <Hero />
-      <ProjectsSection />
+      <Projects />
     </>
   );
 }
