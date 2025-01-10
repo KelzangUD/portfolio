@@ -1,8 +1,5 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid2";
-import Container from "@mui/material/Container";
+import React from "react";
+import { Box, Container } from "@mui/material";
 import TechStackBg from "../assets/jpgs/techstack_image.jpg";
 import ReactJs from "../assets/svgs/react js.svg";
 import TailWindCss from "../assets/svgs/tailwind css.svg";
@@ -16,42 +13,7 @@ import AutodeskEagle from "../assets/svgs/autodesk eagle.svg";
 import OrcadPSPice from "../assets/svgs/orcad pspice.svg";
 import Arduino from "../assets/svgs/arduino.svg";
 import PiTop from "../assets/svgs/pi-top.svg";
-
-const logoStyle = {
-  width: "100px",
-  height: "80px",
-  objectFit: "contain",
-};
-
-const Techs = ({ title, icons }) => {
-  return (
-    <>
-      <Typography
-        sx={{
-          my: 2,
-          textAlign: "left",
-          color: "text.secondary",
-          fontWeight: "bold",
-        }}
-      >
-        {title}
-      </Typography>
-      <Grid
-        container
-        sx={{
-          mt: 0.5,
-        }}
-        spacing={1}
-      >
-        {icons.map((logo, index) => (
-          <Grid item key={index} size={{xs: 4,sm: 3,  md: 2}}>
-            <img src={logo?.icon} alt={logo?.alt} style={logoStyle} />
-          </Grid>
-        ))}
-      </Grid>
-    </>
-  );
-};
+import { Header, Techs } from "../components/index";
 
 export default function TechStacks() {
   const programming = [
@@ -124,26 +86,10 @@ export default function TechStacks() {
         id="logoCollection"
         sx={{ py: { xs: 0, md: 4 }, width: "100%", bgcolor: "transparent" }}
       >
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: { xs: "left", md: "center" },
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: "bold",
-            color: "text.primary",
-          }}
-        >
-          Tech Stacks
-        </Typography>
-        <Typography
-          sx={{
-            textAlign: { xs: "left", md: "center" },
-            color: "text.secondary",
-            mb: 6,
-          }}
-        >
-          "Digital Proficiency: Fusion of Software and Hardware Skills"
-        </Typography>
+        <Header
+          header="Tech Stacks"
+          subheader="“Digital Proficiency: Fusion of Software and Hardware Skills.”"
+        />
         <Techs title="PROGRAMMING" icons={programming} />
         <Techs title="SOFTWARE" icons={software} />
         <Techs title="HARDWARE" icons={hardware} />

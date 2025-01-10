@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Container, } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import FormLabel from "@mui/material/FormLabel";
 import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
@@ -101,14 +101,22 @@ const Textarea = styled(TextareaAutosize)(
 
 export default function ContactMe() {
   return (
-    <Container maxWidth="lg" alignItems="center">
-      <Box mt={18}>
+    <Container
+      maxWidth="lg"
+      alignItems="center"
+      sx={{
+        alignItems: "center",
+        pt: { xs: 14, sm: 20 },
+        pb: { xs: 8, sm: 12 },
+      }}
+    >
+      <Box>
         <Typography variant="h1" gutterBottom>
           CONTACT ME
         </Typography>
         <Typography>
-          "Let's Connect: Reach Out for Collaboration, Questions, or Just a
-          Friendly Hello!"
+          “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
+          Friendly Hello!”
         </Typography>
       </Box>
       <ContactMeContainer>

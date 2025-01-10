@@ -1,10 +1,14 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid2";
-import { Button, Stack } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import {
+  Button,
+  Container,
+  Grid2 as Grid,
+  Stack,
+  styled,
+  Pagination,
+  Typography,
+} from "@mui/material";
 import Portfolio from "../assets/jpgs/portfolio.jpg";
 
 const StyledBox = styled("div")(({ theme }) => ({
@@ -21,7 +25,6 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundImage: `url(${Portfolio})`,
   backgroundSize: "cover",
   [theme.breakpoints.up("sm")]: {
-    // marginTop: theme.spacing(10),
     height: 700,
   },
   ...theme.applyStyles("dark", {
@@ -34,43 +37,64 @@ const StyledBox = styled("div")(({ theme }) => ({
 
 export default function Projects() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        alignItems: "center",
-        pt: { xs: 8, sm: 8 },
-        pb: { xs: 8, sm: 12 },
-      }}
-    >
-      <Box id="projects" sx={{ py: 4, mt: 4 }}>
-        <Typography variant="h1" gutterBottom>
-          Projects
-        </Typography>
-        <Typography>
-          "A Glimpse into My Diverse Portfolio of Projects"
-        </Typography>
-        <Grid container sx={{ justifyContent: "center", opacity: 0.6 }}>
-          <StyledBox id="image" />
-        </Grid>
-        <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Stack
-            useFlexGap
+    <>
+      <Container
+        maxWidth="lg"
+        sx={{
+          alignItems: "center",
+          pt: { xs: 14, sm: 20 },
+          pb: { xs: 8, sm: 12 },
+        }}
+      >
+        <Box id="projects" sx={{ py: { xs: 0, md: 4 } }}>
+          <Typography
+            variant="h1"
             sx={{
-              mt: 6,
-              width: { xs: "100%", sm: "200px" },
+              alignItems: "left",
+              fontSize: "clamp(2rem, 10vw, 3rem)",
             }}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              sx={{ minWidth: "fit-content" }}
+            Projects
+          </Typography>
+          <Grid container sx={{ justifyContent: "center", opacity: 0.6 }}>
+            <StyledBox id="image" />
+          </Grid>
+          <Grid sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Stack
+              useFlexGap
+              sx={{
+                mt: 6,
+                width: { xs: "100%", sm: "200px" },
+                mb: { sm: 6, md: 2 },
+              }}
             >
-              Projects
-            </Button>
-          </Stack>
-        </Grid>
-      </Box>
-    </Container>
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                sx={{ minWidth: "fit-content" }}
+              >
+                View All
+              </Button>
+            </Stack>
+            <Stack
+              useFlexGap
+              sx={{
+                mt: 6,
+                width: { xs: "100%", sm: "200px" },
+                mb: { sm: 6, md: 2 },
+              }}
+            >
+              <Pagination
+                hidePrevButton
+                hideNextButton
+                count={5}
+                boundaryCount={5}
+              />
+            </Stack>
+          </Grid>
+        </Box>
+      </Container>
+    </>
   );
 }

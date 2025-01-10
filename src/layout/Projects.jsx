@@ -1,11 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid2";
-import { Button, Stack } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Button, Container, Grid2 as Grid, Stack, styled } from "@mui/material";
 import Portfolio from "../assets/jpgs/portfolio.jpg";
+import { Header } from "../components/index";
 
 const StyledBox = styled("div")(({ theme }) => ({
   alignSelf: "center",
@@ -21,7 +19,6 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundImage: `url(${Portfolio})`,
   backgroundSize: "cover",
   [theme.breakpoints.up("sm")]: {
-    // marginTop: theme.spacing(10),
     height: 700,
   },
   ...theme.applyStyles("dark", {
@@ -33,28 +30,14 @@ const StyledBox = styled("div")(({ theme }) => ({
 }));
 
 export default function Projects() {
+  const navigate = useNavigate();
   return (
     <Container maxWidth="lg">
-      <Box id="logoCollection" sx={{ py: { xs: 0, md: 4 } }}>
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: "center",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: "bold",
-            color: "text.primary",
-          }}
-        >
-          Projects
-        </Typography>
-        <Typography
-          sx={{
-            textAlign: "center",
-            color: "text.secondary",
-          }}
-        >
-          "A Glimpse into My Diverse Portfolio of Projects"
-        </Typography>
+      <Box id="projects" sx={{ py: { xs: 0, md: 4 } }}>
+        <Header
+          header="Projects"
+          subheader="“A Glimpse into My Diverse Portfolio of Projects”"
+        />
         <Grid container sx={{ justifyContent: "center", opacity: 0.6 }}>
           <StyledBox id="image" />
         </Grid>
@@ -72,6 +55,7 @@ export default function Projects() {
               color="primary"
               size="small"
               sx={{ minWidth: "fit-content" }}
+              onClick={() => navigate("/projects")}
             >
               Projects
             </Button>

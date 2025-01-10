@@ -1,13 +1,19 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid2";
-import { Button, Stack } from "@mui/material";
-import ProjectMockUp from "../assets/svgs/project_mock_up.svg";
+import {
+  Box,
+  Button,
+  Container,
+  Grid2 as Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { useTheme, useMediaQuery } from "@mui/system";
 import PortfolioMockUpp from "../assets/jpgs/portfolio_mock_up.jpg";
+import PortfolioPhoneMockUp from "../assets/jpgs/portfolio_phone_mock_up.jpg";
 
 export default function Project() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Container
       maxWidth="lg"
@@ -29,11 +35,18 @@ export default function Project() {
           Portfolio
         </Typography>
         <Grid container sx={{ justifyContent: "center", my: 6 }}>
-          <img src={PortfolioMockUpp} alt="mock up" />
+          <img
+            src={PortfolioMockUpp}
+            alt="mock up"
+            style={{
+              width: isMobile ? "80%" : "100%",
+            }}
+          />
         </Grid>
         <Typography
           sx={{
             color: "text.secondary",
+            textAlign: "justify"
           }}
         >
           In this showcase, I present a carefully curated selection of projects

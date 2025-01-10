@@ -1,47 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid2";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
-import HeroImage from "../assets/svgs/hero_img.svg";
-
-const StyledBox = styled("div")(({ theme }) => ({
-  alignSelf: "right",
-  width: "auto",
-  height: 500,
-  backgroundImage: `url(${HeroImage})`,
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  backgroundSize: "contain",
-  [theme.breakpoints.up("sm")]: {
-    height: 500,
-  },
-  ...(theme.palette.mode === "dark" && {
-    boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    backgroundImage: `url(${HeroImage})`,
-  }),
-}));
+import {
+  Button,
+  Container,
+  Grid2 as Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { HeroImage } from "../components/index";
 
 export default function Hero() {
   const navigate = useNavigate();
   return (
-    <Box
-      id="hero"
-      sx={(theme) => ({
-        width: "100%",
-        backgroundRepeat: "no-repeat",
-        backgroundImage:
-          "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
-        ...theme.applyStyles("dark", {
-          backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
-        }),
-      })}
-    >
+    <>
       <Container
         sx={{
           alignItems: "center",
@@ -51,7 +22,7 @@ export default function Hero() {
         maxWidth="lg"
       >
         <Grid container spacing={2}>
-          <Grid size={{xs: 12, md: 6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Stack
               spacing={2}
               useFlexGap
@@ -75,7 +46,7 @@ export default function Hero() {
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
                 }}
               >
-                I ' M
+                I ’ M
               </Typography>
               <Typography
                 variant="h1"
@@ -95,7 +66,11 @@ export default function Hero() {
               </Typography>
               <Stack
                 useFlexGap
-                sx={{ mt: 1, width: { xs: "100%", md: "350px" }, mb: { sm: 4, md: 0 } }}
+                sx={{
+                  mt: 1,
+                  width: { xs: "100%", md: "350px" },
+                  mb: { sm: 4, md: 0 },
+                }}
               >
                 <Button
                   variant="contained"
@@ -109,11 +84,11 @@ export default function Hero() {
               </Stack>
             </Stack>
           </Grid>
-          <Grid size={{xs: 12, md: 6}}>
-            <StyledBox id="image" />
+          <Grid size={{ xs: 12, md: 6 }}>
+            <HeroImage />
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </>
   );
 }

@@ -1,25 +1,9 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
+import { Button, Container, Stack, Typography } from "@mui/material";
 
 export default function Intro() {
   return (
-    <Box
-      id="hero"
-      sx={(theme) => ({
-        width: "100%",
-        backgroundRepeat: "no-repeat",
-        backgroundImage:
-          "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
-        ...theme.applyStyles("dark", {
-          backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
-        }),
-      })}
-    >
+    <>
       <Container
         sx={{
           alignItems: "center",
@@ -58,7 +42,7 @@ export default function Intro() {
               color: "text.secondary",
               lineHeight: 2,
               my: 2,
-              textAlign: "justify"
+              textAlign: "justify",
             }}
           >
             With a passion for crafting exceptional digital experiences, I bring
@@ -79,6 +63,6 @@ export default function Intro() {
           </Stack>
         </Stack>
       </Container>
-    </Box>
+    </>
   );
 }
