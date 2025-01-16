@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -8,9 +8,26 @@ import {
   Typography,
 } from "@mui/material";
 import { HeroImage } from "../components/index";
+import axios from "axios";
 
 export default function Hero() {
   const navigate = useNavigate();
+  const [heroData, setHeroData] = useState([]);
+  const fetchHeroData = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/heroes?populate=*`
+      );
+      if (response.status == 200) {
+        setHeroData(response?.data?.data);
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    fetchHeroData();
+  }, []);
   return (
     <>
       <Container
@@ -62,7 +79,7 @@ export default function Hero() {
                   width: "100%",
                 }}
               >
-                Tech enthusiast from the Land of Thunder Dragon
+                {heroData[0]?.subheader}
               </Typography>
               <Stack
                 useFlexGap
@@ -85,7 +102,7 @@ export default function Hero() {
             </Stack>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <HeroImage />
+            <HeroImage img={heroData[0]?.hero_img} />
           </Grid>
         </Grid>
       </Container>
