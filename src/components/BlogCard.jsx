@@ -68,17 +68,17 @@ function Author({ authors, date }) {
         }}
       >
         <AvatarGroup max={3}>
-          {authors.map((author, index) => (
+          {authors?.map((author, index) => (
             <Avatar
               key={index}
-              alt={author.name}
-              src={author.avatar}
+              alt={author?.name}
+              src={author?.avatar}
               sx={{ width: 24, height: 24 }}
             />
           ))}
         </AvatarGroup>
         <Typography variant="caption">
-          {authors.map((author) => author.name).join(", ")}
+          {authors?.map((author) => author?.name).join(", ")}
         </Typography>
       </Box>
       <Typography variant="caption">{date}</Typography>

@@ -16,58 +16,69 @@ import PiTop from "../assets/svgs/pi-top.svg";
 import { Header, Techs } from "../components/index";
 
 export default function TechStacks() {
-  const programming = [
+  const data = [
     {
-      icon: ReactJs,
-      alt: "React Js",
+      title: "programming",
+      icons: [
+        {
+          icon: ReactJs,
+          alt: "React Js",
+        },
+        {
+          icon: TailWindCss,
+          alt: "Tailwind CSS",
+        },
+        {
+          icon: MaterialUi,
+          alt: "MUI",
+        },
+        {
+          icon: ExpressJs,
+          alt: "Express JS",
+        },
+        {
+          icon: MySql,
+          alt: "MySql",
+        },
+        {
+          icon: Bootstrap,
+          alt: "Bootstrap",
+        },
+      ],
     },
     {
-      icon: TailWindCss,
-      alt: "Tailwind CSS",
+      title: "software",
+      icons: [
+        {
+          icon: SolidWork,
+          alt: "SolidWork",
+        },
+        {
+          icon: Blender,
+          alt: "Blender",
+        },
+        {
+          icon: AutodeskEagle,
+          alt: "Autodesk Eagel",
+        },
+        {
+          icon: OrcadPSPice,
+          alt: "Orcad PSPice",
+        },
+      ],
     },
     {
-      icon: MaterialUi,
-      alt: "MUI",
-    },
-    {
-      icon: ExpressJs,
-      alt: "Express JS",
-    },
-    {
-      icon: MySql,
-      alt: "MySql",
-    },
-    {
-      icon: Bootstrap,
-      alt: "Bootstrap",
-    },
-  ];
-  const software = [
-    {
-      icon: SolidWork,
-      alt: "SolidWork",
-    },
-    {
-      icon: Blender,
-      alt: "Blender",
-    },
-    {
-      icon: AutodeskEagle,
-      alt: "Autodesk Eagel",
-    },
-    {
-      icon: OrcadPSPice,
-      alt: "Orcad PSPice",
-    },
-  ];
-  const hardware = [
-    {
-      icon: Arduino,
-      alt: "Arduino",
-    },
-    {
-      icon: PiTop,
-      alt: "Pi-Top",
+      title: "hardware",
+      icons: [
+        {
+          icon: Arduino,
+          alt: "Arduino",
+        },
+        {
+          icon: 'url("../assets/svgs/pi-top.svg")',
+          alt: "Pi-Top",
+        },
+      ],
     },
   ];
   return (
@@ -83,16 +94,20 @@ export default function TechStacks() {
       }}
     >
       <Box
-        id="logoCollection"
+        id="techStacks"
         sx={{ py: { xs: 0, md: 4 }, width: "100%", bgcolor: "transparent" }}
       >
         <Header
           header="Tech Stacks"
           subheader="“Digital Proficiency: Fusion of Software and Hardware Skills.”"
         />
-        <Techs title="PROGRAMMING" icons={programming} />
-        <Techs title="SOFTWARE" icons={software} />
-        <Techs title="HARDWARE" icons={hardware} />
+        {data?.map((item) => (
+          <Techs
+            title={item?.title.toUpperCase()}
+            icons={item?.icons}
+            key={item?.title}
+          />
+        ))}
       </Box>
     </Container>
   );
