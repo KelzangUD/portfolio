@@ -7,3 +7,4 @@ export { default as TimeLines } from "./TimeLines";
 export { default as CategoryFilter } from "./CategoryFilter";
 export { default as Search } from "./Search";
 export { default as BlogCard } from "./BlogCard";
+export { default as ProjectCard } from "./ProjectCard";

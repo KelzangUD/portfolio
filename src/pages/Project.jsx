@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
   Container,
   Grid2 as Grid,
+  Link,
   Stack,
   Typography,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
-import PortfolioMockUpp from "../assets/jpgs/portfolio_mock_up.jpg";
-import PortfolioPhoneMockUp from "../assets/jpgs/portfolio_phone_mock_up.jpg";
+import axios from "axios";
 
 export default function Project() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
+  const pathName = window?.location?.pathname;
+  // const params = new URLSearchParams();
+  const [project, setProject] = useState([]);
+  const fetchProjectData = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api${pathName}?populate=*`
+      );
+      console.log(response);
+      if (response.status == 200) {
+        setProject(response?.data?.data);
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    fetchProjectData();
+  }, []);
   return (
     <Container
       maxWidth="lg"
@@ -32,11 +53,11 @@ export default function Project() {
             color: "text.primary",
           }}
         >
-          Portfolio
+          {project?.title}
         </Typography>
         <Grid container sx={{ justifyContent: "center", my: 6 }}>
           <img
-            src={PortfolioMockUpp}
+            src={`${process.env.REACT_APP_API_URL}${project?.mock_up?.url}`}
             alt="mock up"
             style={{
               width: isMobile ? "80%" : "100%",
@@ -46,16 +67,10 @@ export default function Project() {
         <Typography
           sx={{
             color: "text.secondary",
-            textAlign: "justify"
+            textAlign: "justify",
           }}
         >
-          In this showcase, I present a carefully curated selection of projects
-          that reflect my commitment to excellence in web development. Each
-          project is a testament to my passion for crafting intuitive and
-          visually compelling digital experiences. Explore the synergy of design
-          and functionality as I walk you through a journey of successful
-          collaborations and impactful solutions that define my expertise as a
-          web developer
+          {project?.description}
         </Typography>
         <Typography
           sx={{
@@ -63,14 +78,14 @@ export default function Project() {
             my: 2,
           }}
         >
-          Role: FullStack Developer
+          Role: {project?.role}
         </Typography>
         <Typography
           sx={{
             color: "text.secondary",
           }}
         >
-          Techstacks: React JS, Material UI
+          Techstacks: {project?.techStacks}
         </Typography>
         <Grid>
           <Stack
@@ -85,6 +100,10 @@ export default function Project() {
               color="primary"
               size="small"
               sx={{ minWidth: "fit-content" }}
+              component="a"
+              href={project?.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Visit
             </Button>

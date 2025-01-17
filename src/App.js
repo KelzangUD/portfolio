@@ -24,7 +24,7 @@ function App(props) {
             <Route path="/" element={<Home />} />
             <Route path="/about-me" element={<AboutMe />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/project" element={<Project />} />
+            <Route path="/projects/:id" element={<Project />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact-me" element={<ContactMe />} />
           </Routes>

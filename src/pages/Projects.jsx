@@ -1,40 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import {
   Button,
   Container,
   Grid2 as Grid,
   Stack,
-  styled,
   Pagination,
   Typography,
 } from "@mui/material";
-
-const StyledBox = styled("div")(({ theme }) => ({
-  alignSelf: "center",
-  width: "100%",
-  height: 400,
-  marginTop: theme.spacing(6),
-  borderRadius: (theme.vars || theme).shape.borderRadius,
-  outline: "6px solid",
-  outlineColor: "hsla(220, 25%, 80%, 0.2)",
-  border: "1px solid",
-  borderColor: (theme.vars || theme).palette.grey[200],
-  boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
-  backgroundImage: "url('../assets/jpgs/portfolio.jpg')",
-  backgroundSize: "cover",
-  [theme.breakpoints.up("sm")]: {
-    height: 700,
-  },
-  ...theme.applyStyles("dark", {
-    boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    backgroundImage: "url('../assets/jpgs/portfolio.jpg')",
-    outlineColor: "hsla(220, 20%, 42%, 0.1)",
-    borderColor: (theme.vars || theme).palette.grey[700],
-  }),
-}));
+import { ProjectCard } from "../components/index";
+import axios from "axios";
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const fetchProjectsData = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/projects?populate=*`
+      );
+      if (response.status == 200) {
+        setProjects(response?.data?.data);
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    fetchProjectsData();
+  }, []);
   return (
     <>
       <Container
@@ -55,10 +48,43 @@ export default function Projects() {
           >
             Projects
           </Typography>
-          <Grid container sx={{ justifyContent: "center", opacity: 0.6 }}>
-            <StyledBox id="image" />
+          <Grid
+            container
+            sx={{ justifyContent: "center", opacity: 0.9 }}
+            spacing={2}
+          >
+            {projects?.map((item) => (
+              <>
+                <Grid
+                  item
+                  key={item?.id}
+                  size={projects?.length === 1 ? 12 : 6}
+                >
+                  <ProjectCard
+                    item={item}
+                    height={projects?.length === 1 ? 700 : 400}
+                  />
+                </Grid>
+              </>
+            ))}
           </Grid>
-          <Grid sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Stack
+              useFlexGap
+              sx={{
+                mt: 6,
+                mb: { sm: 6, md: 2 },
+              }}
+            >
+              <Pagination
+                variant="outlined"
+                shape="rounded"
+                count={projects?.meta?.pagination?.page}
+                boundaryCount={5}
+              />
+            </Stack>
+          </Grid>
+          <Grid>
             <Stack
               useFlexGap
               sx={{
@@ -75,21 +101,6 @@ export default function Projects() {
               >
                 View All
               </Button>
-            </Stack>
-            <Stack
-              useFlexGap
-              sx={{
-                mt: 6,
-                width: { xs: "100%", sm: "200px" },
-                mb: { sm: 6, md: 2 },
-              }}
-            >
-              <Pagination
-                hidePrevButton
-                hideNextButton
-                count={5}
-                boundaryCount={5}
-              />
             </Stack>
           </Grid>
         </Box>

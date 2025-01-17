@@ -3,9 +3,6 @@ import { styled } from "@mui/material";
 
 
 export default function HeroImage({img}) {
-  React.useEffect(() => {
-    console.log(`${process.env.REACT_APP_API_URL}${img?.url}`)
-  },[])
   const StyledBox = styled("div")(({ theme }) => ({
     alignSelf: "right",
     width: "auto",
