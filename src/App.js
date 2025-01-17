@@ -9,6 +9,7 @@ import {
   Projects,
   Project,
   Blogs,
+  Blog,
   ContactMe,
 } from "./pages/index";
 import { AppAppBar, Footer } from "./layout/index";
@@ -26,6 +27,7 @@ function App(props) {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<Project />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<Blog />} />
             <Route path="/contact-me" element={<ContactMe />} />
           </Routes>
         </HeroBox>
