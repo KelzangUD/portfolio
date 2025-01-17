@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
+import Resume from "../assets/pdfs/document.pdf";
 
 export default function Intro() {
   return (
@@ -57,6 +58,10 @@ export default function Intro() {
               color="primary"
               size="small"
               sx={{ minWidth: "fit-content" }}
+              component="a"
+              href={Resume}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
             </Button>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
@@ -15,16 +14,13 @@ import axios from "axios";
 export default function Project() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const navigate = useNavigate();
   const pathName = window?.location?.pathname;
-  // const params = new URLSearchParams();
   const [project, setProject] = useState([]);
   const fetchProjectData = async () => {
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api${pathName}?populate=*`
       );
-      console.log(response);
       if (response.status == 200) {
         setProject(response?.data?.data);
       }

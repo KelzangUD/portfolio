@@ -29,7 +29,11 @@ const Techs = ({ title, icons }) => {
       >
         {icons.map((logo, index) => (
           <Grid item key={index} size={{ xs: 4, sm: 3, md: 2 }}>
-            <img src={logo?.icon} alt={logo?.alt} style={logoStyle} />
+            <img
+              src={`${process.env.REACT_APP_API_URL}${logo?.icon}`}
+              alt={logo?.alt}
+              style={logoStyle}
+            />
           </Grid>
         ))}
       </Grid>
