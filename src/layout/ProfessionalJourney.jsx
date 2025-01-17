@@ -25,7 +25,7 @@ export default function ProfessionalJourney() {
           container
           sx={{
             mt: 0.5,
-            opacity: 0.6,
+            opacity: 0.9,
             display: "flex",
             justifyContent: "space-between",
           }}
