@@ -8,3 +8,5 @@ export { default as CategoryFilter } from "./CategoryFilter";
 export { default as Search } from "./Search";
 export { default as BlogCard } from "./BlogCard";
 export { default as ProjectCard } from "./ProjectCard";
+export { default as WhatIDoCard } from "./WhatIDoCard";
+export { default as StatisticsCard } from "./StatisticsCard";

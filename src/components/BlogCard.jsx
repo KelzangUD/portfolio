@@ -103,7 +103,7 @@ function Author({ authors, date }) {
           alignItems: "center",
         }}
       >
-        <AvatarGroup max={3}>
+        {/* <AvatarGroup max={3}>
           {authors?.map((author, index) => (
             <Avatar
               key={index}
@@ -112,7 +112,7 @@ function Author({ authors, date }) {
               sx={{ width: 24, height: 24 }}
             />
           ))}
-        </AvatarGroup>
+        </AvatarGroup> */}
         <Typography variant="caption">
           {authors?.map((author) => author?.name).join(", ")}
         </Typography>
