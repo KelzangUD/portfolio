@@ -89,6 +89,14 @@ export default function AppAppBar() {
               color="primary"
               variant="text"
               size="small"
+              onClick={() => navigate("/gallery")}
+            >
+              Gallery
+            </Button>
+            <Button
+              color="primary"
+              variant="text"
+              size="small"
               onClick={() => navigate("/blogs")}
             >
               Blogs

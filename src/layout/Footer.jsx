@@ -43,7 +43,7 @@ export default function Footer() {
             useFlexGap
             sx={{ justifyContent: "left", color: "text.primary", alignItems: "center", }}
           >
-            <Typography variant={{ xs: "subtitle1", md: "h6"}}>
+            <Typography variant="h6">
               Social Media: 
             </Typography>
             <IconButton

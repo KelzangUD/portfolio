@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Avatar,
-  AvatarGroup,
   Box,
   Card,
   CardContent,
@@ -103,16 +101,6 @@ function Author({ authors, date }) {
           alignItems: "center",
         }}
       >
-        {/* <AvatarGroup max={3}>
-          {authors?.map((author, index) => (
-            <Avatar
-              key={index}
-              alt={author?.name}
-              src={author?.avatar}
-              sx={{ width: 24, height: 24 }}
-            />
-          ))}
-        </AvatarGroup> */}
         <Typography variant="caption">
           {authors?.map((author) => author?.name).join(", ")}
         </Typography>

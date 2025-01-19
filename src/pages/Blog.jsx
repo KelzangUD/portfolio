@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Container, Grid2 as Grid } from "@mui/material";
+import { Container} from "@mui/material";
 import axios from "axios";
 import Markdown from "markdown-to-jsx";
 
@@ -11,17 +11,16 @@ export default function Blog() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api${pathName}`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setBlog(response?.data?.data);
-        console.log(response)
       }
     } catch (error) {
       console.error(error.message);
     }
   };
   useEffect(() => {
-    console.log(pathName)
     fetchBlog();
+    // eslint-disable-next-line 
   }, []);
   return (
     <Container
