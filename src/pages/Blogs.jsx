@@ -43,7 +43,6 @@ export default function Blogs() {
           <Typography variant="h1" gutterBottom>
             Blogs
           </Typography>
-          <Typography>“Stay in the loop.”</Typography>
         </div>
         <Box
           sx={{

@@ -155,7 +155,7 @@ export default function BlogsCard({ item, index }) {
         </SyledCardContent>
         <Author authors={item?.authors} date={item?.date} />
         <div className="hoverContent">
-          <StyledButton onClick={viewHandle}>View Blog</StyledButton>
+          <StyledButton onClick={viewHandle}>Read Blog</StyledButton>
         </div>
       </SyledCard>
     </Grid>

@@ -25,45 +25,44 @@ const DynamicIcon = ({ iconName }) => {
 export default function WhatIDoCard({ item, index }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const isTab = useMediaQuery(
-    theme.breakpoints.up("md") && theme.breakpoints.down("lg")
-  );
-  const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
-  const getMarginTop = (isLarge, isTab, index) => {
-    if (isLarge) {
-      switch (index % 4) {
-        case 0:
-          return 0;
-        case 1:
-          return 6;
-        case 2:
-          return 12;
-        case 3:
-          return 18;
-        default:
-          return 0;
-      }
-    }
-    if (isTab) {
-      switch (index % 3) {
-        case 0:
-          return 0;
-        case 1:
-          return 6;
-        case 2:
-          return 12;
-        default:
-          return 0;
-      }
-    }
-    return 0;
-  };
+  // const isTab = useMediaQuery(
+  //   theme.breakpoints.up("md") && theme.breakpoints.down("lg")
+  // );
+  // const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
+  // const getMarginTop = (isLarge, isTab, index) => {
+  //   if (isLarge) {
+  //     switch (index % 4) {
+  //       case 0:
+  //         return 0;
+  //       case 1:
+  //         return 6;
+  //       case 2:
+  //         return 12;
+  //       case 3:
+  //         return 18;
+  //       default:
+  //         return 0;
+  //     }
+  //   }
+  //   if (isTab) {
+  //     switch (index % 3) {
+  //       case 0:
+  //         return 0;
+  //       case 1:
+  //         return 6;
+  //       case 2:
+  //         return 12;
+  //       default:
+  //         return 0;
+  //     }
+  //   }
+  //   return 0;
+  // };
   return (
     <Grid
-      item
       sx={{ opacity: 0.9 }}
       key={item?.id}
-      mt={getMarginTop(isLarge, isTab, index)}
+      // mt={getMarginTop(isLarge, isTab, index)}
     >
       <Card
         sx={{
@@ -79,7 +78,7 @@ export default function WhatIDoCard({ item, index }) {
             boxShadow: "0 0 24px 12px hsla(220, 50%, 70%, 0.4)",
             transform: "scale(1.01)",
             outlineColor: "hsla(220, 25%, 90%, 0.5)",
-            cursor: "default"
+            cursor: "default",
           },
         }}
       >

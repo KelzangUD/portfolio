@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Grid2 as Grid, Typography } from "@mui/material";
+import { Grid2 as Grid, Typography } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
 
 export default function StatisticsCard({ item }) {
@@ -8,7 +8,6 @@ export default function StatisticsCard({ item }) {
 
   return (
     <Grid
-      item
       sx={{
         textAlign: "center",
         padding: isMobile ? 2 : 4,
@@ -30,7 +29,7 @@ export default function StatisticsCard({ item }) {
         variant="subtitle2"
         sx={{
           fontSize: isMobile ? "0.9rem" : "1rem",
-        //   lineHeight: 1.5,
+          //   lineHeight: 1.5,
           maxWidth: "300px",
           margin: "0 auto",
         }}

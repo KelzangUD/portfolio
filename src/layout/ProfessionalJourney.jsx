@@ -5,18 +5,20 @@ import { Header, TimeLines } from "../components/index";
 
 export default function ProfessionalJourney() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        backgroundImage: `url(${ProfessionalBg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
-        backgroundColor: "rgba(255, 255, 255, 0.95)",
-      }}
-    >
-      <Box id="professionalJouney" sx={{ py: 4, width: "100%" }}>
+    <Container maxWidth="lg">
+      <Box
+        id="professionalJouney"
+        sx={{
+          py: 4,
+          width: "100%",
+          backgroundImage: `url(${ProfessionalBg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundBlendMode: "overlay",
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+        }}
+      >
         <Header
           header="PROFESSIONAL JOURNEY"
           subheader="“Professional Journey: Where Expertise Meets Experience.”"
