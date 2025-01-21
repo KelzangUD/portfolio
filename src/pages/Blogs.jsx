@@ -40,7 +40,11 @@ export default function Blogs() {
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
         <div>
-          <Typography variant="h1" gutterBottom>
+          <Typography
+            variant="h1"
+            gutterBottom
+            sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
+          >
             Blogs
           </Typography>
         </div>

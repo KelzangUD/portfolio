@@ -94,10 +94,20 @@ export default function ContactMe() {
       }}
     >
       <Box>
-        <Typography variant="h1" gutterBottom>
-          CONTACT ME
+        <Typography
+          variant="h1"
+          gutterBottom
+          sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
+        >
+          Contact Me
         </Typography>
-        <Typography>
+        <Typography
+        variant="h5"
+          sx={{
+            fontFamily: "Satisfy, sans-serif",
+            color: "text.secondary",
+          }}
+        >
           “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
           Friendly Hello!”
         </Typography>

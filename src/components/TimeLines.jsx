@@ -58,7 +58,7 @@ export default function Timelines() {
                     (index + 1) % 2 === 0
                       ? { xs: "left", md: "right" }
                       : { xs: "left" },
-                  mb: 2,
+                  fontWeight: "600",
                 }}
               >
                 {item?.year}
@@ -70,7 +70,8 @@ export default function Timelines() {
                     (index + 1) % 2 === 0
                       ? { xs: "left", md: "right" }
                       : { xs: "left" },
-                  fontWeight: "bold",
+                  fontWeight: 200,
+                  fontFamily: "Titan One, sans-serif",
                 }}
               >
                 {item?.company}
@@ -82,7 +83,7 @@ export default function Timelines() {
                     (index + 1) % 2 === 0
                       ? { xs: "left", md: "right" }
                       : { xs: "left" },
-                  fontWeight: "500",
+                  fontWeight: "600",
                   mb: 2,
                 }}
               >

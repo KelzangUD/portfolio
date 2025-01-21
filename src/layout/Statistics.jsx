@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Box,
-  Button,
-  Card,
-  CardContent,
   Container,
   Grid2 as Grid,
-  Stack,
-  Typography,
 } from "@mui/material";
 import { Header, StatisticsCard } from "../components/index";
 import axios from "axios";

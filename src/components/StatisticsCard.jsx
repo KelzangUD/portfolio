@@ -29,7 +29,6 @@ export default function StatisticsCard({ item }) {
         variant="subtitle2"
         sx={{
           fontSize: isMobile ? "0.9rem" : "1rem",
-          //   lineHeight: 1.5,
           maxWidth: "300px",
           margin: "0 auto",
         }}

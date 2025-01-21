@@ -97,12 +97,13 @@ export default function WhatIDoCard({ item, index }) {
             <DynamicIcon iconName={item?.icon} />
           </Avatar>
           <Typography
-            variant="h5"
+            variant="h6"
             sx={{
               fontSize: isMobile
-                ? "clamp(2rem, 10vw, 2rem)"
-                : "clamp(1rem, 5vw, 1.5rem)",
+                ? "clamp(1rem, 5vw, 1rem)"
+                : "clamp(1rem, 5vw, 1.1rem)",
               my: 2,
+              fontFamily: "Titan One, sans-serif",
             }}
           >
             {item?.title}

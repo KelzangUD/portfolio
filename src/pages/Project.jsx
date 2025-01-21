@@ -45,8 +45,9 @@ export default function Project() {
           variant="subtitle2"
           sx={{
             fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: "bold",
             color: "text.primary",
+            fontFamily: "Titan One, sans-serif",
+            fontWeight: 300,
           }}
         >
           {project?.title}

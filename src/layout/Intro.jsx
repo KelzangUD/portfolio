@@ -26,6 +26,8 @@ export default function Intro() {
             sx={{
               alignItems: "left",
               fontSize: "clamp(2rem, 10vw, 1rem)",
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300
             }}
           >
             KUZUZANGPO,
@@ -34,6 +36,8 @@ export default function Intro() {
             variant="h1"
             sx={{
               fontSize: "clamp(3rem, 10vw, 2rem)",
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300
             }}
           >
             I'm Kelzang Ugyen Dorji.

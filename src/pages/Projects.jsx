@@ -44,6 +44,8 @@ export default function Projects() {
             sx={{
               alignItems: "left",
               fontSize: "clamp(2rem, 10vw, 3rem)",
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300
             }}
           >
             Projects

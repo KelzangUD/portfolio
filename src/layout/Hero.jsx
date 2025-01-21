@@ -53,6 +53,8 @@ export default function Hero() {
                 sx={{
                   alignItems: "left",
                   fontSize: "clamp(2rem, 10vw, 1rem)",
+                  fontFamily: "Titan One, sans-serif",
+                  fontWeight: 300
                 }}
               >
                 GREETING,
@@ -60,7 +62,9 @@ export default function Hero() {
               <Typography
                 variant="h1"
                 sx={{
+                  fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
+                  fontWeight: 300
                 }}
               >
                 I ’ M
@@ -68,15 +72,20 @@ export default function Hero() {
               <Typography
                 variant="h1"
                 sx={{
+                  fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
+                  fontWeight: 300
                 }}
               >
                 KELZANG UGYEN DORJI.
               </Typography>
               <Typography
+                variant="h5"
                 sx={{
                   color: "text.secondary",
                   width: "100%",
+                  fontFamily: "Satisfy, sans-serif",
+                  my: 2
                 }}
               >
                 {heroData[0]?.subheader}
@@ -84,7 +93,6 @@ export default function Hero() {
               <Stack
                 useFlexGap
                 sx={{
-                  mt: 1,
                   width: { xs: "100%", md: "350px" },
                   mb: { sm: 4, md: 0 },
                 }}

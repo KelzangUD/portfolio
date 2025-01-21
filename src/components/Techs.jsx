@@ -9,7 +9,9 @@ const Techs = ({ tech }) => {
           my: 2,
           textAlign: "left",
           color: "text.secondary",
-          fontWeight: "bold",
+          // fontWeight: "bold",
+          fontFamily: "Titan One, sans-serif",
+          // fontWeight: 100,
         }}
       >
         {tech?.title.toUpperCase()}
