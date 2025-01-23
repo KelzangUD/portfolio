@@ -14,7 +14,7 @@ export default function Statistics() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/statistics`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setStatisticsData(response?.data?.data);
       }
     } catch (error) {
@@ -23,6 +23,7 @@ export default function Statistics() {
   };
   useEffect(() => {
     fetchStatisticsData();
+     // eslint-disable-next-line
   }, []);
   return (
     <>

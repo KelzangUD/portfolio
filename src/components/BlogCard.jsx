@@ -9,13 +9,15 @@ import {
   styled,
   Typography,
 } from "@mui/material";
+import { useTheme, useMediaQuery } from "@mui/system";
+import { Slide } from "react-awesome-reveal";
 
-const SyledCard = styled(Card)(({ theme }) => ({
+const SyledCard = styled(Card)(({ theme, isMobile }) => ({
   position: "relative",
   display: "flex",
   flexDirection: "column",
   padding: 0,
-  height: "100%",
+  height: isMobile ? "100%" : "600px",
   backgroundColor: (theme.vars || theme).palette.background.paper,
   "&:hover": {
     background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))`,
@@ -113,6 +115,8 @@ function Author({ authors, date }) {
 export default function BlogsCard({ item, index }) {
   const [focusedCardIndex, setFocusedCardIndex] = useState(null);
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const handleFocus = (index) => {
     setFocusedCardIndex(index);
   };
@@ -125,39 +129,46 @@ export default function BlogsCard({ item, index }) {
 
   return (
     <Grid size={{ xs: 12, md: 6 }}>
-      <SyledCard
-        variant="outlined"
-        onFocus={() => handleFocus(index)}
-        onBlur={handleBlur}
-        tabIndex={index}
-        className={focusedCardIndex === index ? "Mui-focused" : ""}
-      >
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          image={`${process.env.REACT_APP_API_URL}${item?.img[0]?.url}`}
-          sx={{
-            aspectRatio: "16 / 9",
-            borderBottom: "1px solid",
-            borderColor: "divider",
-          }}
-        />
-        <SyledCardContent>
-          <Typography gutterBottom variant="caption" component="div">
-            {item?.tag}
-          </Typography>
-          <Typography gutterBottom variant="h6" component="div">
-            {item?.title}
-          </Typography>
-          <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-            {item?.description}
-          </StyledTypography>
-        </SyledCardContent>
-        <Author authors={item?.authors} date={item?.date} />
-        <div className="hoverContent">
-          <StyledButton onClick={viewHandle}>Read Blog</StyledButton>
-        </div>
-      </SyledCard>
+      <Slide direction="up" triggerOnce>
+        <SyledCard
+          variant="outlined"
+          onFocus={() => handleFocus(index)}
+          onBlur={handleBlur}
+          tabIndex={index}
+          className={focusedCardIndex === index ? "Mui-focused" : ""}
+          isMobile={isMobile}
+        >
+          <CardMedia
+            component="img"
+            alt="green iguana"
+            image={`${process.env.REACT_APP_API_URL}${item?.img[0]?.url}`}
+            sx={{
+              aspectRatio: "16 / 9",
+              borderBottom: "1px solid",
+              borderColor: "divider",
+            }}
+          />
+          <SyledCardContent>
+            <Typography gutterBottom variant="caption" component="div">
+              {item?.tag}
+            </Typography>
+            <Typography gutterBottom variant="h6" component="div">
+              {item?.title}
+            </Typography>
+            <StyledTypography
+              variant="body2"
+              color="text.secondary"
+              gutterBottom
+            >
+              {item?.description}
+            </StyledTypography>
+          </SyledCardContent>
+          <Author authors={item?.authors} date={item?.date} />
+          <div className="hoverContent">
+            <StyledButton onClick={viewHandle}>Read Blog</StyledButton>
+          </div>
+        </SyledCard>
+      </Slide>
     </Grid>
   );
 }

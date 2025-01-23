@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { Button, Container, Grid2 as Grid, Stack } from "@mui/material";
 import { Header, ProjectCard } from "../components/index";
 import axios from "axios";
-
+import { Slide } from "react-awesome-reveal";
 
 export default function Projects() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Projects() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/projects?populate=*`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setProjects(response?.data?.data);
       }
     } catch (error) {
@@ -23,6 +23,7 @@ export default function Projects() {
   };
   useEffect(() => {
     fetchProjectsData();
+    // eslint-disable-next-line
   }, []);
   return (
     <Container maxWidth="lg">
@@ -31,15 +32,17 @@ export default function Projects() {
           header="Projects"
           subheader="“A Glimpse into My Diverse Portfolio of Projects”"
         />
-        {projects?.map((item) => (
-          <Grid
-            container
-            sx={{ justifyContent: "center", opacity: 0.9 }}
-            key={item?.id}
-          >
-            <ProjectCard item={item} />
-          </Grid>
-        ))}
+        <Slide direction="up" cascade damping={0.2} triggerOnce>
+          {projects?.map((item) => (
+            <Grid
+              container
+              sx={{ justifyContent: "center", opacity: 0.9 }}
+              key={item?.id}
+            >
+              <ProjectCard item={item} />
+            </Grid>
+          ))}
+        </Slide>
         <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Stack
             useFlexGap

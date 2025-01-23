@@ -4,12 +4,12 @@ import {
   Button,
   Container,
   Grid2 as Grid,
-  Link,
   Stack,
   Typography,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
 import axios from "axios";
+import { Slide, Fade } from "react-awesome-reveal";
 
 export default function Project() {
   const theme = useTheme();
@@ -21,7 +21,7 @@ export default function Project() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api${pathName}?populate=*`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setProject(response?.data?.data);
       }
     } catch (error) {
@@ -30,6 +30,7 @@ export default function Project() {
   };
   useEffect(() => {
     fetchProjectData();
+    // eslint-disable-next-line
   }, []);
   return (
     <Container
@@ -41,71 +42,82 @@ export default function Project() {
       }}
     >
       <Box id="logoCollection" sx={{ py: 4 }}>
-        <Typography
-          variant="subtitle2"
-          sx={{
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            color: "text.primary",
-            fontFamily: "Titan One, sans-serif",
-            fontWeight: 300,
-          }}
-        >
-          {project?.title}
-        </Typography>
-        <Grid container sx={{ justifyContent: "center", my: 6 }}>
-          <img
-            src={`${process.env.REACT_APP_API_URL}${project?.mock_up?.url}`}
-            alt="mock up"
-            style={{
-              width: isMobile ? "80%" : "100%",
-            }}
-          />
-        </Grid>
-        <Typography
-          sx={{
-            color: "text.secondary",
-            textAlign: "justify",
-          }}
-        >
-          {project?.description}
-        </Typography>
-        <Typography
-          sx={{
-            color: "text.secondary",
-            my: 2,
-          }}
-        >
-          Role: {project?.role}
-        </Typography>
-        <Typography
-          sx={{
-            color: "text.secondary",
-          }}
-        >
-          Techstacks: {project?.techStacks}
-        </Typography>
-        <Grid>
-          <Stack
-            useFlexGap
+        <Slide direction="up" triggerOnce>
+          <Typography
+            variant="subtitle2"
             sx={{
-              mt: 4,
-              width: { xs: "100%", sm: "200px" },
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              color: "text.primary",
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300,
             }}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              sx={{ minWidth: "fit-content" }}
-              component="a"
-              href={project?.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit
-            </Button>
-          </Stack>
+            {project?.title}
+          </Typography>
+        </Slide>
+        <Grid container sx={{ justifyContent: "center", my: 6 }}>
+          <Slide direction="up" triggerOnce>
+            <img
+              src={`${process.env.REACT_APP_API_URL}${project?.mock_up?.url}`}
+              alt="mock up"
+              style={{
+                width: isMobile ? "80%" : "100%",
+              }}
+            />
+          </Slide>
         </Grid>
+        <Fade
+          delay={1500}
+          duration={1000}
+          triggerOnce
+          fraction={0.5}
+        >
+          <Typography
+            sx={{
+              color: "text.secondary",
+              textAlign: "justify",
+            }}
+          >
+            {project?.description}
+          </Typography>
+          <Typography
+            sx={{
+              color: "text.secondary",
+              my: 2,
+            }}
+          >
+            Role: {project?.role}
+          </Typography>
+          <Typography
+            sx={{
+              color: "text.secondary",
+            }}
+          >
+            Techstacks: {project?.techStacks}
+          </Typography>
+          <Grid>
+            <Stack
+              useFlexGap
+              sx={{
+                mt: 4,
+                width: { xs: "100%", sm: "200px" },
+              }}
+            >
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                sx={{ minWidth: "fit-content" }}
+                component="a"
+                href={project?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit
+              </Button>
+            </Stack>
+          </Grid>
+        </Fade>
       </Box>
     </Container>
   );

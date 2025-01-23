@@ -67,6 +67,7 @@ export default function WhatIDoCard({ item, index }) {
       <Card
         sx={{
           maxWidth: isMobile ? "100%" : "260px",
+          minWidth: isMobile ? "100%" : "220px",
           borderRadius: (theme.vars || theme).shape.borderRadius,
           outline: "2px solid",
           outlineColor: "hsla(220, 25%, 80%, 0.2)",

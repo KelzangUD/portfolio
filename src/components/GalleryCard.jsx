@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  Card,
-  Grid2 as Grid,
-  styled,
-  Typography,
-} from "@mui/material";
+import { Card, Grid2 as Grid, styled, Typography } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
+import { Fade } from "react-awesome-reveal";
 
-const GalleryCard = ({ item }) => {
+const GalleryCard = ({ item, index }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const SyledCard = styled(Card)(({ theme }) => ({
@@ -44,20 +40,22 @@ const GalleryCard = ({ item }) => {
   }));
   return (
     <Grid size={{ xs: 12, md: item?.md, flexGrow: 1 }}>
-      <SyledCard>
-        <div className="hoverContent">
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: isMobile
-                ? "clamp(1rem, 10vw, 1rem)"
-                : "clamp(1rem, 10vw, 1rem)",
-            }}
-          >
-            {item?.alt}
-          </Typography>
-        </div>
-      </SyledCard>
+      <Fade delay={200 * index} duration={1000} triggerOnce fraction={0.5}>
+        <SyledCard>
+          <div className="hoverContent">
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: isMobile
+                  ? "clamp(1rem, 10vw, 1rem)"
+                  : "clamp(1rem, 10vw, 1rem)",
+              }}
+            >
+              {item?.alt}
+            </Typography>
+          </div>
+        </SyledCard>
+      </Fade>
     </Grid>
   );
 };

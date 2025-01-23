@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
 import { gray, brand } from "../theme/themePrimitives";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const FormGrid = styled(Grid)(() => ({
   display: "flex",
@@ -94,69 +95,73 @@ export default function ContactMe() {
       }}
     >
       <Box>
-        <Typography
-          variant="h1"
-          gutterBottom
-          sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
-        >
-          Contact Me
-        </Typography>
-        <Typography
-        variant="h5"
-          sx={{
-            fontFamily: "Satisfy, sans-serif",
-            color: "text.secondary",
-          }}
-        >
-          “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
-          Friendly Hello!”
-        </Typography>
+        <Fade delay={200} duration={1000} fraction={0.5} triggerOnce>
+          <Typography
+            variant="h1"
+            gutterBottom
+            sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
+          >
+            Contact Me
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "Satisfy, sans-serif",
+              color: "text.secondary",
+            }}
+          >
+            “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
+            Friendly Hello!”
+          </Typography>
+        </Fade>
       </Box>
       <ContactMeContainer>
-        <Grid container spacing={3}>
-          <FormGrid size={{ xs: 12, md: 6 }}>
-            <FormLabel htmlFor="name" required>
-              Name
-            </FormLabel>
-            <OutlinedInput
-              id="name"
-              name="name"
-              type="name"
-              placeholder="John"
-              autoComplete="name"
-              required
-              size="small"
-            />
-          </FormGrid>
-          <FormGrid size={{ xs: 12, md: 6 }}>
-            <FormLabel htmlFor="email" required>
-              Email
-            </FormLabel>
-            <OutlinedInput
-              id="email"
-              name="email"
-              type="email"
-              placeholder="john@email.com"
-              autoComplete="email"
-              required
-              size="small"
-            />
-          </FormGrid>
-          <FormGrid size={{ xs: 12 }}>
-            <FormLabel htmlFor="message" required>
-              Message
-            </FormLabel>
-            <Textarea
-              id="message"
-              aria-label="minimum height"
-              minRows={4}
-              placeholder="Message"
-            />
-          </FormGrid>
-          <Button fullWidth variant="contained" color="primary">
-            Send
-          </Button>
-        </Grid>
+        <Slide direction="up" triggerOnce>
+          <Grid container spacing={3}>
+            <FormGrid size={{ xs: 12, md: 6 }}>
+              <FormLabel htmlFor="name" required>
+                Name
+              </FormLabel>
+              <OutlinedInput
+                id="name"
+                name="name"
+                type="name"
+                placeholder="John"
+                autoComplete="name"
+                required
+                size="small"
+              />
+            </FormGrid>
+            <FormGrid size={{ xs: 12, md: 6 }}>
+              <FormLabel htmlFor="email" required>
+                Email
+              </FormLabel>
+              <OutlinedInput
+                id="email"
+                name="email"
+                type="email"
+                placeholder="john@email.com"
+                autoComplete="email"
+                required
+                size="small"
+              />
+            </FormGrid>
+            <FormGrid size={{ xs: 12 }}>
+              <FormLabel htmlFor="message" required>
+                Message
+              </FormLabel>
+              <Textarea
+                id="message"
+                aria-label="minimum height"
+                minRows={4}
+                placeholder="Message"
+              />
+            </FormGrid>
+            <Button fullWidth variant="contained" color="primary">
+              Send
+            </Button>
+          </Grid>
+        </Slide>
       </ContactMeContainer>
     </Container>
   );

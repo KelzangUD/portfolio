@@ -1,0 +1,33 @@
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: Titan One;
+  white-space: pre;
+  font-size: 60px;
+  line-height: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+}
+.loader:before {
+  content: "Kuzuzangpo...\AuzKangpozu...\AnagzuoKzup...\AozKuzupagn...\AgKzanupzou...\ApouKzanguz...";
+  white-space: pre;
+  display: inline-block;
+  animation: l38 1s infinite steps(6);
+}
+
+@keyframes l38 {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* When the element is visible in the viewport */
+.fade-in:has(:view) {
+  animation: fadeInBottom 2s ease forwards;
+}

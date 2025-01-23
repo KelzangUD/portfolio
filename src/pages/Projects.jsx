@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ProjectCard } from "../components/index";
 import axios from "axios";
+import { Slide } from "react-awesome-reveal";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -18,7 +19,7 @@ export default function Projects() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/projects?populate=*`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setProjects(response?.data?.data);
       }
     } catch (error) {
@@ -45,7 +46,7 @@ export default function Projects() {
               alignItems: "left",
               fontSize: "clamp(2rem, 10vw, 3rem)",
               fontFamily: "Titan One, sans-serif",
-              fontWeight: 300
+              fontWeight: 300,
             }}
           >
             Projects
@@ -62,10 +63,12 @@ export default function Projects() {
                   key={item?.id}
                   size={projects?.length === 1 ? 12 : 6}
                 >
-                  <ProjectCard
-                    item={item}
-                    height={projects?.length === 1 ? 700 : 400}
-                  />
+                  <Slide direction="up" triggerOnce>
+                    <ProjectCard
+                      item={item}
+                      height={projects?.length === 1 ? 700 : 400}
+                    />
+                  </Slide>
                 </Grid>
               </>
             ))}

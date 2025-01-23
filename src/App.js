@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppTheme from "./theme/AppTheme";
-import { CssBaseline, Box, LinearProgress } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,56 +32,21 @@ function ScrollToTop({ children }) {
 
 function App(props) {
   const [loading, setLoading] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
-  }, []);
-
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const scrollHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    setScrollProgress(scrollPercentage);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    }, 1900);
   }, []);
 
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
-      <Box>
+      <HeroBox>
         {loading ? (
           <Loader />
         ) : (
           <>
-            <Box
-              sx={{
-                width: "100%",
-                position: "fixed",
-                top: 0,
-                left: 0,
-                zIndex: 9999,
-              }}
-            >
-              <LinearProgress
-                variant="determinate"
-                value={scrollProgress}
-                sx={{
-                  "& .MuiLinearProgress-bar": {
-                    backgroundColor: "#05070a", // Color of the progress bar
-                  },
-                }}
-              />
-            </Box>
             <AppAppBar />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -96,7 +61,7 @@ function App(props) {
             <Footer />
           </>
         )}
-      </Box>
+      </HeroBox>
     </AppTheme>
   );
 }

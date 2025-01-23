@@ -48,8 +48,8 @@ export default function Gallery() {
           Gallery
         </Typography>
         <Grid container spacing={2} columns={12} my={4}>
-          {gallery?.map((item) => (
-            <GalleryCard item={item} key={item?.id} />
+          {gallery?.map((item, index) => (
+            <GalleryCard item={item} index={index} key={item?.id} />
           ))}
         </Grid>
       </Box>

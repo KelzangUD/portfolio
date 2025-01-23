@@ -1,17 +1,16 @@
 import React from "react";
 import { Grid2 as Grid, Typography } from "@mui/material";
+import { Fade } from "react-awesome-reveal";
 
-const Techs = ({ tech }) => {
+const Techs = ({ tech, index }) => {
   return (
-    <>
+    <Fade delay={1000 * index} duration={2000} fraction={0.5} triggerOnce>
       <Typography
         sx={{
           my: 2,
           textAlign: "left",
           color: "text.secondary",
-          // fontWeight: "bold",
           fontFamily: "Titan One, sans-serif",
-          // fontWeight: 100,
         }}
       >
         {tech?.title.toUpperCase()}
@@ -27,7 +26,7 @@ const Techs = ({ tech }) => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Fade>
   );
 };
 

@@ -27,12 +27,12 @@ export default function Gallery() {
       <Box>
         <Header header="Gallery" subheader="“Moments Captured in Time.”" />
         <Grid container spacing={1} columns={12}>
-          {gallery?.slice(0, 6).map((item) => (
-            <GalleryCard item={item} key={item?.id} />
+          {gallery?.slice(0, 6).map((item, index) => (
+            <GalleryCard item={item} index={index} key={item?.id} />
           ))}
         </Grid>
       </Box>
-      <Grid sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
+      <Grid sx={{ display: "flex", justifyContent: "flex-end", my: 4 }}>
         <Stack
           useFlexGap
           sx={{

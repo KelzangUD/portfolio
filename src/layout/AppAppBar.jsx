@@ -47,6 +47,17 @@ export default function AppAppBar() {
         bgcolor: "transparent",
         backgroundImage: "none",
         mt: "calc(var(--template-frame-height, 0px) + 28px)",
+        animation: "fadeIn 1s ease-in-out",
+        "@keyframes fadeIn": {
+          from: {
+            opacity: 0,
+            mt: 0,
+          },
+          to: {
+            opacity: 1,
+            mt: "calc(var(--template-frame-height, 0px) + 28px)",
+          },
+        },
       }}
     >
       <Container maxWidth="lg">
@@ -57,7 +68,7 @@ export default function AppAppBar() {
               variant="text"
               size="small"
               onClick={() => navigate("/")}
-              sx={{ width: "90px", justifyContent: "center" }}
+              sx={{ width: "90px", justifyContent: "justify-between" }}
             >
               <Logo />
             </Button>
@@ -89,18 +100,26 @@ export default function AppAppBar() {
               color="primary"
               variant="text"
               size="small"
-              onClick={() => navigate("/gallery")}
+              onClick={() => navigate("/blogs")}
             >
-              Gallery
+              Blogs
             </Button>
             <Button
               color="primary"
               variant="text"
               size="small"
-              onClick={() => navigate("/blogs")}
+              onClick={() => navigate("/gallery")}
             >
-              Blogs
+              Gallery
             </Button>
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: 1,
+              alignItems: "center",
+            }}
+          >
             <Button
               color="primary"
               variant="contained"
@@ -185,6 +204,19 @@ export default function AppAppBar() {
                     }}
                   >
                     Blogs
+                  </Button>
+                </MenuItem>
+                <MenuItem>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    fullWidth
+                    onClick={() => {
+                      navigate("/gallery");
+                      setOpen(false);
+                    }}
+                  >
+                    Gallery
                   </Button>
                 </MenuItem>
                 <Divider sx={{ my: 3 }} />

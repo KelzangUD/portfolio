@@ -44,7 +44,7 @@ export default function TechStacks() {
           subheader="“Digital Proficiency: Fusion of Software and Hardware Skills.”"
         />
         {techStacks?.map((tech, index) => (
-          <Techs tech={tech} key={tech.title} />
+          <Techs tech={tech} index={index} key={tech.title} />
         ))}
       </Box>
     </Container>

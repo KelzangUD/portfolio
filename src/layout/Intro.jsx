@@ -1,10 +1,11 @@
 import React from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import Resume from "../assets/pdfs/document.pdf";
+import { Slide } from "react-awesome-reveal";
 
 export default function Intro() {
   return (
-    <>
+    <Slide direction="up" triggerOnce>
       <Container
         sx={{
           alignItems: "center",
@@ -72,6 +73,6 @@ export default function Intro() {
           </Stack>
         </Stack>
       </Container>
-    </>
+    </Slide>
   );
 }

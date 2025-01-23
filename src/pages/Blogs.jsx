@@ -16,7 +16,7 @@ export default function Blogs() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/blogs?populate=*`
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         setBlogs(response?.data?.data);
       }
     } catch (error) {
@@ -25,6 +25,7 @@ export default function Blogs() {
   };
   useEffect(() => {
     fetchBlogs();
+     // eslint-disable-next-line
   }, []);
   return (
     <Container
@@ -34,7 +35,7 @@ export default function Blogs() {
         display: "flex",
         flexDirection: "column",
         pt: { xs: 12, sm: 20 },
-        pb: { xs: 0, sm: 12 },
+        pb: 4,
         gap: 4,
       }}
     >
@@ -88,7 +89,7 @@ export default function Blogs() {
             <BlogCard item={item} index={index} key={item} />
           ))}
         </Grid>
-        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 4 }}>
+        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0, }}>
           <Pagination
             variant="outlined"
             shape="rounded"
