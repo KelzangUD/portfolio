@@ -108,6 +108,14 @@ export default function AppAppBar() {
               color="primary"
               variant="text"
               size="small"
+              onClick={() => navigate("/vlogs")}
+            >
+              Vlogs
+            </Button>
+            <Button
+              color="primary"
+              variant="text"
+              size="small"
               onClick={() => navigate("/gallery")}
             >
               Gallery
@@ -204,6 +212,19 @@ export default function AppAppBar() {
                     }}
                   >
                     Blogs
+                  </Button>
+                </MenuItem>
+                <MenuItem>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    fullWidth
+                    onClick={() => {
+                      navigate("/gallery");
+                      setOpen(false);
+                    }}
+                  >
+                    Vlogs
                   </Button>
                 </MenuItem>
                 <MenuItem>

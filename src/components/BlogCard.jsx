@@ -12,7 +12,7 @@ import {
 import { useTheme, useMediaQuery } from "@mui/system";
 import { Slide } from "react-awesome-reveal";
 
-const SyledCardContent = styled(CardContent)({
+const StyledCardContent = styled(CardContent)({
   display: "flex",
   flexDirection: "column",
   gap: 4,
@@ -34,16 +34,14 @@ const StyledTypography = styled(Typography)({
 const StyledButton = styled("button")(({ theme }) => ({
   marginTop: theme.spacing(2),
   padding: theme.spacing(1, 3),
-  color: "#eee",
+  color: "#000",
   border: "2px solid #eee",
   borderRadius: "4px",
   cursor: "pointer",
   transition: "all 0.3s ease-in-out",
-  backgroundColor: "transparent",
+  backgroundColor: "#eee",
   "&:hover": {
     transform: "scale(1.05)",
-    backgroundColor: "#eee",
-    color: "#000",
   },
 }));
 
@@ -90,7 +88,7 @@ export default function BlogsCard({ item, index }) {
   const viewHandle = () => {
     navigate(`/blogs/${item?.documentId}`);
   };
-  const SyledCard = styled(Card)(({ theme }) => ({
+  const StyledCard = styled(Card)(({ theme }) => ({
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -98,7 +96,7 @@ export default function BlogsCard({ item, index }) {
     height: isMobile ? "100%" : "600px",
     backgroundColor: (theme.vars || theme).palette.background.paper,
     "&:hover": {
-      background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))`,
+      background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1))`,
       transform: "scale(1.01)",
       border: "none",
       boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
@@ -129,7 +127,7 @@ export default function BlogsCard({ item, index }) {
   return (
     <Grid size={{ xs: 12, md: 6 }}>
       <Slide direction="up" triggerOnce>
-        <SyledCard
+        <StyledCard
           variant="outlined"
           onFocus={() => handleFocus(index)}
           onBlur={handleBlur}
@@ -146,7 +144,7 @@ export default function BlogsCard({ item, index }) {
               borderColor: "divider",
             }}
           />
-          <SyledCardContent>
+          <StyledCardContent>
             <Typography gutterBottom variant="caption" component="div">
               {item?.tag}
             </Typography>
@@ -160,12 +158,12 @@ export default function BlogsCard({ item, index }) {
             >
               {item?.description}
             </StyledTypography>
-          </SyledCardContent>
+          </StyledCardContent>
           <Author authors={item?.authors} date={item?.date} />
           <div className="hoverContent">
             <StyledButton onClick={viewHandle}>Read Blog</StyledButton>
           </div>
-        </SyledCard>
+        </StyledCard>
       </Slide>
     </Grid>
   );

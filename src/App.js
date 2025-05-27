@@ -17,6 +17,7 @@ import {
   Blog,
   ContactMe,
   Gallery,
+  Vlogs
 } from "./pages/index";
 import { AppAppBar, Footer } from "./layout/index";
 
@@ -55,6 +56,7 @@ function App(props) {
               <Route path="/projects/:id" element={<Project />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:id" element={<Blog />} />
+              <Route path="/vlogs" element={<Vlogs />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact-me" element={<ContactMe />} />
             </Routes>
