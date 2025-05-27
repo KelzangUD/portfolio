@@ -87,7 +87,6 @@ export default function ContactMe() {
   return (
     <Container
       maxWidth="lg"
-      alignItems="center"
       sx={{
         alignItems: "center",
         pt: { xs: 14, sm: 20 },

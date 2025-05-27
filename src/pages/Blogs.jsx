@@ -86,7 +86,7 @@ export default function Blogs() {
         </Box>
         <Grid container spacing={3} columns={12}>
           {blogs?.map((item, index) => (
-            <BlogCard item={item} index={index} key={item} />
+            <BlogCard item={item} index={index} key={index} />
           ))}
         </Grid>
         <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0, }}>

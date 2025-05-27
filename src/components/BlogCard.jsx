@@ -12,42 +12,6 @@ import {
 import { useTheme, useMediaQuery } from "@mui/system";
 import { Slide } from "react-awesome-reveal";
 
-const SyledCard = styled(Card)(({ theme, isMobile }) => ({
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  padding: 0,
-  height: isMobile ? "100%" : "600px",
-  backgroundColor: (theme.vars || theme).palette.background.paper,
-  "&:hover": {
-    background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))`,
-    transform: "scale(1.01)",
-    border: "none",
-    boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
-    outline: "6px solid",
-    outlineColor: "hsla(220, 25%, 80%, 0.2)",
-  },
-  "& .hoverContent": {
-    position: "absolute",
-    bottom: "25%",
-    left: "50%",
-    transform: "translate(-50%, 50%)",
-    color: "#fff",
-    opacity: 0,
-    transition: "opacity 0.3s ease-in-out",
-    pointerEvents: "none",
-  },
-  "&:hover .hoverContent": {
-    opacity: 1,
-    pointerEvents: "auto",
-  },
-  "&:focus-visible": {
-    outline: "3px solid",
-    outlineColor: "hsla(210, 98%, 48%, 0.5)",
-    outlineOffset: "2px",
-  },
-}));
-
 const SyledCardContent = styled(CardContent)({
   display: "flex",
   flexDirection: "column",
@@ -126,6 +90,41 @@ export default function BlogsCard({ item, index }) {
   const viewHandle = () => {
     navigate(`/blogs/${item?.documentId}`);
   };
+  const SyledCard = styled(Card)(({ theme }) => ({
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    padding: 0,
+    height: isMobile ? "100%" : "600px",
+    backgroundColor: (theme.vars || theme).palette.background.paper,
+    "&:hover": {
+      background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))`,
+      transform: "scale(1.01)",
+      border: "none",
+      boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
+      outline: "6px solid",
+      outlineColor: "hsla(220, 25%, 80%, 0.2)",
+    },
+    "& .hoverContent": {
+      position: "absolute",
+      bottom: "25%",
+      left: "50%",
+      transform: "translate(-50%, 50%)",
+      color: "#fff",
+      opacity: 0,
+      transition: "opacity 0.3s ease-in-out",
+      pointerEvents: "none",
+    },
+    "&:hover .hoverContent": {
+      opacity: 1,
+      pointerEvents: "auto",
+    },
+    "&:focus-visible": {
+      outline: "3px solid",
+      outlineColor: "hsla(210, 98%, 48%, 0.5)",
+      outlineOffset: "2px",
+    },
+  }));
 
   return (
     <Grid size={{ xs: 12, md: 6 }}>
@@ -136,11 +135,10 @@ export default function BlogsCard({ item, index }) {
           onBlur={handleBlur}
           tabIndex={index}
           className={focusedCardIndex === index ? "Mui-focused" : ""}
-          isMobile={isMobile}
         >
           <CardMedia
             component="img"
-            alt="green iguana"
+            alt={item?.alt}
             image={`${process.env.REACT_APP_API_URL}${item?.img[0]?.url}`}
             sx={{
               aspectRatio: "16 / 9",

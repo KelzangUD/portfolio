@@ -40,7 +40,7 @@ const GalleryCard = ({ item, index }) => {
   }));
   return (
     <Grid size={{ xs: 12, md: item?.md, flexGrow: 1 }}>
-      <Fade delay={200 * index} duration={1000} triggerOnce fraction={0.5}>
+      <Fade delay={100 * index} duration={1000} triggerOnce fraction={0.5}>
         <SyledCard>
           <div className="hoverContent">
             <Typography

@@ -59,9 +59,8 @@ export default function Projects() {
             {projects?.map((item) => (
               <>
                 <Grid
-                  item
-                  key={item?.id}
                   size={projects?.length === 1 ? 12 : 6}
+                  key={item?.id}
                 >
                   <Slide direction="up" triggerOnce>
                     <ProjectCard

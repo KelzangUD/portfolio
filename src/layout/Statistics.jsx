@@ -32,7 +32,7 @@ export default function Statistics() {
         sx={{
           width: "100%",
           backgroundRepeat: "no-repeat",
-          background: "hsl(210, 100%, 99%)",
+          // background: "hsl(210, 100%, 99%)",
         }}
       >
         <Box id="whatido" sx={{ py: { xs: 0, md: 4 }, mb: 6 }}>
@@ -41,8 +41,8 @@ export default function Statistics() {
             subheader="“Key Metrics at a Glance.”"
           />
           <Grid container spacing={1} sx={{ justifyContent: "space-between" }}>
-            {statisticsData?.map((item) => (
-              <StatisticsCard item={item} key={item?.id} />
+            {statisticsData?.map((item, index) => (
+              <StatisticsCard item={item} key={index} />
             ))}
           </Grid>
         </Box>

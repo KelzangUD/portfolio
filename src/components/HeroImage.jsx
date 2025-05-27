@@ -14,7 +14,6 @@ export default function HeroImage({ img }) {
       height: 500,
     },
     ...(theme.palette.mode === "dark" && {
-      boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
       backgroundImage: `url(${process.env.REACT_APP_API_URL}${img?.url})`,
     }),
   }));

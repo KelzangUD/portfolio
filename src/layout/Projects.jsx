@@ -33,11 +33,11 @@ export default function Projects() {
           subheader="“A Glimpse into My Diverse Portfolio of Projects”"
         />
         <Slide direction="up" cascade damping={0.2} triggerOnce>
-          {projects?.map((item) => (
+          {projects?.map((item, index) => (
             <Grid
               container
               sx={{ justifyContent: "center", opacity: 0.9 }}
-              key={item?.id}
+              key={index}
             >
               <ProjectCard item={item} />
             </Grid>

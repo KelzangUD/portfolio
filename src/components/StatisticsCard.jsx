@@ -45,7 +45,7 @@ export default function StatisticsCard({ item }) {
         variant="h1"
         sx={{
           fontSize: isMobile
-            ? "clamp(1rem, 10vw, 3rem)"
+            ? "clamp(1rem, 3vw, 3rem)"
             : "clamp(1rem, 3vw, 3rem)",
           fontWeight: "bold",
           fontFamily: "Titan One, sans-serif",
