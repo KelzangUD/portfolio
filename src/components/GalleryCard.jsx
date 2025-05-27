@@ -6,10 +6,11 @@ import { Fade } from "react-awesome-reveal";
 const GalleryCard = ({ item, index }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const SyledCard = styled(Card)(({ theme }) => ({
+  const StyledCard = styled(Card)(({ theme }) => ({
     aspectRatio: item?.aspectRatio,
     position: "relative",
     border: "1px solid",
+    outlineColor: "hsla(220, 25%, 80%, 0.2)",
     borderColor: (theme.vars || theme).palette.grey[200],
     boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
     backgroundImage: `url(${process.env.REACT_APP_API_URL}${item?.img?.url})`,
@@ -41,7 +42,7 @@ const GalleryCard = ({ item, index }) => {
   return (
     <Grid size={{ xs: 12, md: item?.md, flexGrow: 1 }}>
       <Fade delay={100 * index} duration={1000} triggerOnce fraction={0.5}>
-        <SyledCard>
+        <StyledCard>
           <div className="hoverContent">
             <Typography
               variant="h1"
@@ -54,7 +55,7 @@ const GalleryCard = ({ item, index }) => {
               {item?.alt}
             </Typography>
           </div>
-        </SyledCard>
+        </StyledCard>
       </Fade>
     </Grid>
   );

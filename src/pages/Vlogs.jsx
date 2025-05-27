@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  Container,
-  Grid2 as Grid,
-  Stack,
-  Pagination,
-  styled,
-  Typography,
-} from "@mui/material";
+import { Container, Grid2 as Grid, styled, Typography } from "@mui/material";
 import axios from "axios";
 import { Slide } from "react-awesome-reveal";
 import ReactPlayer from "react-player";
 
 const StyledBox = styled("div")(({ theme }) => ({
+  padding: "0 32px",
   position: "relative",
   alignSelf: "center",
+  backgroundColor: "#000",
   borderRadius: (theme.vars || theme).shape.borderRadius,
   outline: "6px solid",
   outlineColor: "hsla(220, 25%, 80%, 0.2)",
   overflow: "hidden",
   border: "1px solid",
-  borderColor: (theme.vars || theme).palette.grey[200],
+  borderColor: (theme.vars || theme).palette.grey[600],
   boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
   transition: "all 0.3s ease-in-out",
   "&:hover": {
@@ -102,7 +96,7 @@ export default function Vlogs() {
           >
             {vlogs?.map((item) => (
               <>
-                <Grid size={{ xs: 12, md: 6 }} key={item?.id}>
+                <Grid size={{ xs: 12, md: 6 }} key={item?.url}>
                   <Slide direction="up" triggerOnce>
                     <StyledBox>
                       <ReactPlayer url={item?.url} controls width="100%" />
