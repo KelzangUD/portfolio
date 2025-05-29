@@ -6,7 +6,7 @@ export default function HeroImage({ img }) {
     alignSelf: "right",
     width: "auto",
     height: 500,
-    backgroundImage: `url(${process.env.REACT_APP_API_URL}${img?.url})`,
+    backgroundImage: `url(${img})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "contain",
@@ -14,7 +14,7 @@ export default function HeroImage({ img }) {
       height: 500,
     },
     ...(theme.palette.mode === "dark" && {
-      backgroundImage: `url(${process.env.REACT_APP_API_URL}${img?.url})`,
+      backgroundImage: `url(${img})`,
     }),
   }));
   return <StyledBox id="image" />;

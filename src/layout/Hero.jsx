@@ -142,7 +142,7 @@ export default function Hero() {
               },
             }}
           >
-            <HeroImage img={heroData[0]?.hero_img} />
+            <HeroImage img={heroData[0]?.url} alt="Hero image" />
           </Grid>
         </Grid>
       </Container>

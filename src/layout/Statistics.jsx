@@ -35,7 +35,7 @@ export default function Statistics() {
           // background: "hsl(210, 100%, 99%)",
         }}
       >
-        <Box id="whatido" sx={{ py: { xs: 0, md: 4 }, mb: 6 }}>
+        <Box id="whatIDo" sx={{ py: { xs: 0, md: 4 }, mb: 6 }}>
           <Header
             header="In The Numbers"
             subheader="“Key Metrics at a Glance.”"

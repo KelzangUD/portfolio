@@ -137,7 +137,7 @@ export default function BlogsCard({ item, index }) {
           <CardMedia
             component="img"
             alt={item?.alt}
-            image={`${process.env.REACT_APP_API_URL}${item?.img[0]?.url}`}
+            image={item?.img_url}
             sx={{
               aspectRatio: "16 / 9",
               borderBottom: "1px solid",

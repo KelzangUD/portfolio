@@ -20,7 +20,7 @@ export default function ProjectCard({ item, height = 700 }) {
     border: "1px solid",
     borderColor: (theme.vars || theme).palette.grey[200],
     boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
-    backgroundImage: `url(${process.env.REACT_APP_API_URL}${item?.img?.url})`,
+    backgroundImage: `url(${item?.img_url})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     transition: "all 0.3s ease-in-out",
@@ -28,7 +28,7 @@ export default function ProjectCard({ item, height = 700 }) {
       height: height,
     },
     "&:hover": {
-      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${process.env.REACT_APP_API_URL}${item?.img?.url})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${item?.img_url})`,
       boxShadow: "0 0 24px 12px hsla(220, 50%, 70%, 0.4)",
       transform: "scale(1.01)",
       outlineColor: "hsla(220, 25%, 90%, 0.5)",

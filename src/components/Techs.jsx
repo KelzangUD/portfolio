@@ -19,7 +19,7 @@ const Techs = ({ tech, index }) => {
         {tech?.icons.map((icon) => (
           <Grid size={{ xs: 4, sm: 3, md: 2 }} key={icon?.alt}>
             <img
-              src={`${process.env.REACT_APP_API_URL}${icon?.url}`}
+              src={icon?.url}
               alt={icon?.alt}
               style={{ width: "100px", height: "80px", objectFit: "contain" }}
             />

@@ -58,7 +58,7 @@ export default function Project() {
         <Grid container sx={{ justifyContent: "center", my: 6 }}>
           <Slide direction="up" triggerOnce>
             <img
-              src={`${process.env.REACT_APP_API_URL}${project?.mock_up?.url}`}
+              src={project?.mock_up_url}
               alt="mock up"
               style={{
                 width: isMobile ? "80%" : "100%",
@@ -66,12 +66,7 @@ export default function Project() {
             />
           </Slide>
         </Grid>
-        <Fade
-          delay={1500}
-          duration={1000}
-          triggerOnce
-          fraction={0.5}
-        >
+        <Fade delay={1500} duration={1000} triggerOnce fraction={0.5}>
           <Typography
             sx={{
               color: "text.secondary",
