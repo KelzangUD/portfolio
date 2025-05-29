@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container} from "@mui/material";
+import { Container } from "@mui/material";
 import axios from "axios";
 import Markdown from "markdown-to-jsx";
 
@@ -20,7 +20,7 @@ export default function Blog() {
   };
   useEffect(() => {
     fetchBlog();
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, []);
   return (
     <Container
@@ -32,6 +32,14 @@ export default function Blog() {
         pt: { xs: 12, sm: 20 },
         pb: { xs: 0, sm: 12 },
         gap: 4,
+        color: "#eee",
+        "& a": {
+          color: "#90caf9",
+          textDecoration: "underline",
+        },
+        "& a:hover": {
+          color: "#42a5f5",
+        },
       }}
     >
       <Markdown>{blog?.content}</Markdown>

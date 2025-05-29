@@ -73,7 +73,7 @@ export default function WhatIDoCard({ item, index }) {
                 height: "100%",
               }}
             >
-              <Avatar sx={{ bgcolor: gray[100], height: 56, width: 56 }}>
+              <Avatar sx={{ bgcolor: gray[100], height: 56, width: 56, color: gray[900] }}>
                 <DynamicIcon iconName={item?.icon} />
               </Avatar>
               <Typography
@@ -84,6 +84,7 @@ export default function WhatIDoCard({ item, index }) {
                     : "clamp(1rem, 5vw, 1.1rem)",
                   my: 2,
                   fontFamily: "Titan One, sans-serif",
+                  color: "#eee"
                 }}
               >
                 {item?.title}
@@ -96,6 +97,7 @@ export default function WhatIDoCard({ item, index }) {
                   height: 250,
                   overflow: "hidden",
                   lineHeight: 1.6,
+                  color: 'rgb(255 255 255 / 70%)'
                 }}
               >
                 {item?.description}

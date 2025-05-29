@@ -12,27 +12,17 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundColor: "#000",
   borderRadius: (theme.vars || theme).shape.borderRadius,
   outline: "6px solid",
-  outlineColor: "hsla(220, 25%, 80%, 0.2)",
   overflow: "hidden",
   border: "1px solid",
-  borderColor: (theme.vars || theme).palette.grey[600],
-  boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
   transition: "all 0.3s ease-in-out",
+  boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
+  outlineColor: "hsla(220, 20%, 42%, 0.1)",
+  borderColor: (theme.vars || theme).palette.grey[700],
   "&:hover": {
-    boxShadow: "0 0 24px 12px hsla(220, 50%, 70%, 0.4)",
+    boxShadow: "0 0 32px 16px hsla(210, 100%, 30%, 0.4)",
     transform: "scale(1.01)",
-    outlineColor: "hsla(220, 25%, 90%, 0.5)",
+    outlineColor: "hsla(220, 20%, 50%, 0.5)",
   },
-  ...theme.applyStyles("dark", {
-    boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    outlineColor: "hsla(220, 20%, 42%, 0.1)",
-    borderColor: (theme.vars || theme).palette.grey[700],
-    "&:hover": {
-      boxShadow: "0 0 32px 16px hsla(210, 100%, 30%, 0.4)",
-      transform: "scale(1.01)",
-      outlineColor: "hsla(220, 20%, 50%, 0.5)",
-    },
-  }),
   "& .hoverContent": {
     position: "absolute",
     top: "15%",
@@ -84,6 +74,7 @@ export default function Vlogs() {
               fontSize: "clamp(2rem, 10vw, 3rem)",
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
+              color: "#eee"
             }}
           >
             Vlogs
@@ -109,6 +100,7 @@ export default function Vlogs() {
                         fontFamily: "Titan One, sans-serif",
                         fontWeight: 100,
                         marginTop: "16px",
+                        color: "#eee"
                       }}
                     >
                       {item?.Title}

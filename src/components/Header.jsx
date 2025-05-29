@@ -53,7 +53,7 @@ const Header = ({ header, subheader }) => {
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
               fontSize: "clamp(2rem, 5vw, 3rem)",
-              color: "text.primary",
+              color: "#eee",
             }}
           >
             {header}
@@ -63,8 +63,8 @@ const Header = ({ header, subheader }) => {
             sx={{
               fontFamily: "Satisfy, sans-serif",
               textAlign: { xs: "left", md: "center" },
-              color: "text.secondary",
               mb: 6,
+              color: "rgb(255 255 255 / 70%)",
             }}
           >
             {subheader}

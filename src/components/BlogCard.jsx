@@ -65,11 +65,13 @@ function Author({ authors, date }) {
           alignItems: "center",
         }}
       >
-        <Typography variant="caption">
+        <Typography variant="caption" color="#eee">
           {authors?.map((author) => author?.name).join(", ")}
         </Typography>
       </Box>
-      <Typography variant="caption">{date}</Typography>
+      <Typography variant="caption" color="#eee">
+        {date}
+      </Typography>
     </Box>
   );
 }
@@ -94,7 +96,7 @@ export default function BlogsCard({ item, index }) {
     flexDirection: "column",
     padding: 0,
     height: isMobile ? "100%" : "600px",
-    backgroundColor: (theme.vars || theme).palette.background.paper,
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
     "&:hover": {
       background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1))`,
       transform: "scale(1.01)",
@@ -145,15 +147,20 @@ export default function BlogsCard({ item, index }) {
             }}
           />
           <StyledCardContent>
-            <Typography gutterBottom variant="caption" component="div">
+            <Typography
+              gutterBottom
+              variant="caption"
+              component="div"
+              color="#eee"
+            >
               {item?.tag}
             </Typography>
-            <Typography gutterBottom variant="h6" component="div">
+            <Typography gutterBottom variant="h6" component="div" color="#eee">
               {item?.title}
             </Typography>
             <StyledTypography
               variant="body2"
-              color="text.secondary"
+              color="rgb(255 255 255 / 70%)"
               gutterBottom
             >
               {item?.description}

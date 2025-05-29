@@ -25,7 +25,7 @@ export default function Blogs() {
   };
   useEffect(() => {
     fetchBlogs();
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
   return (
     <Container
@@ -44,7 +44,11 @@ export default function Blogs() {
           <Typography
             variant="h1"
             gutterBottom
-            sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
+            sx={{
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300,
+              color: "#eee",
+            }}
           >
             Blogs
           </Typography>
@@ -89,12 +93,17 @@ export default function Blogs() {
             <BlogCard item={item} index={index} key={index} />
           ))}
         </Grid>
-        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0, }}>
+        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0 }}>
           <Pagination
             variant="outlined"
             shape="rounded"
             count={blogs?.meta?.pagination?.page}
             boundaryCount={5}
+            sx={{
+              "& .MuiPaginationItem-icon": {
+                color: "rgb(255 255 255 / 70%)",
+              },
+            }}
           />
         </Box>
       </Box>

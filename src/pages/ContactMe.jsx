@@ -28,10 +28,7 @@ const ContactMeContainer = styled("div")(({ theme }) => ({
   margin: "50px 0",
   borderRadius: `calc(${theme.shape.borderRadius}px + 4px)`,
   border: "1px solid ",
-  borderColor: (theme.vars || theme).palette.divider,
-  background:
-    "linear-gradient(to bottom right, hsla(220, 35%, 97%, 0.3) 25%, hsla(220, 20%, 88%, 0.3) 100%)",
-  boxShadow: "0px 4px 8px hsla(210, 0%, 0%, 0.05)",
+  borderColor: "#ffffff1a",
   [theme.breakpoints.up("xs")]: {
     height: 450,
   },
@@ -41,15 +38,13 @@ const ContactMeContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     height: 350,
   },
-  ...theme.applyStyles("dark", {
-    background:
-      "linear-gradient(to right bottom, hsla(220, 30%, 6%, 0.2) 25%, hsla(220, 20%, 25%, 0.2) 100%)",
-    boxShadow: "0px 4px 8px hsl(220, 35%, 0%)",
-  }),
+  background:
+    "linear-gradient(to right bottom, hsla(220, 30%, 6%, 0.2) 25%, hsla(220, 20%, 25%, 0.2) 100%)",
+  boxShadow: "0px 4px 8px hsl(220, 35%, 0%)",
 }));
 
 const Textarea = styled(TextareaAutosize)(
-  ({ theme }) => `
+  () => `
     box-sizing: border-box;
     width: 100%;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -58,24 +53,17 @@ const Textarea = styled(TextareaAutosize)(
     line-height: 1.5;
     padding: 8px 12px;
     border-radius: 8px;
-    color: ${theme.palette.mode === "dark" ? gray[300] : gray[900]};
-    background: ${theme.palette.mode === "dark" ? gray[900] : "#fff"};
-    border: 1px solid ${theme.palette.mode === "dark" ? gray[700] : gray[200]};
-    box-shadow: 0 2px 2px ${
-      theme.palette.mode === "dark" ? gray[900] : gray[50]
-    };
-
+    color: ${gray[300]};
+    background: ${gray[900]};
+    border: 0.5px solid ${gray[700]};
+    box-shadow: 0 1px 1px ${gray[900]};
     &:hover {
       border-color: ${gray[500]};
     }
-
     &:focus {
-      border-color: ${brand[400]};
-      box-shadow: 0 0 0 3px ${
-        theme.palette.mode === "dark" ? brand[600] : brand[200]
-      };
+      border-color: ${brand[500]};
+      box-shadow: 0 0 0 1px ${brand[400]};
     }
-
     /* firefox */
     &:focus-visible {
       outline: 0;
@@ -98,7 +86,11 @@ export default function ContactMe() {
           <Typography
             variant="h1"
             gutterBottom
-            sx={{ fontFamily: "Titan One, sans-serif", fontWeight: 300 }}
+            sx={{
+              fontFamily: "Titan One, sans-serif",
+              fontWeight: 300,
+              color: "#eee",
+            }}
           >
             Contact Me
           </Typography>
@@ -106,7 +98,7 @@ export default function ContactMe() {
             variant="h5"
             sx={{
               fontFamily: "Satisfy, sans-serif",
-              color: "text.secondary",
+              color: "rgb(255 255 255 / 70%)",
             }}
           >
             “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
@@ -118,7 +110,11 @@ export default function ContactMe() {
         <Slide direction="up" triggerOnce>
           <Grid container spacing={3}>
             <FormGrid size={{ xs: 12, md: 6 }}>
-              <FormLabel htmlFor="name" required>
+              <FormLabel
+                htmlFor="name"
+                required
+                sx={{ color: "rgb(255 255 255 / 70%)" }}
+              >
                 Name
               </FormLabel>
               <OutlinedInput
@@ -129,10 +125,30 @@ export default function ContactMe() {
                 autoComplete="name"
                 required
                 size="small"
+                sx={{
+                  color: gray[300],
+                  backgroundColor: gray[900],
+                  border: `1px solid ${gray[700]}`,
+                  boxShadow: `0 2px 2px ${gray[900]}`,
+                  "&:hover": {
+                    borderColor: gray[500],
+                  },
+                  "&:focus": {
+                    borderColor: brand[400],
+                    boxShadow: `0 0 0 3px ${brand[600]}`,
+                  },
+                  "&:focus-visible": {
+                    outline: 0,
+                  },
+                }}
               />
             </FormGrid>
             <FormGrid size={{ xs: 12, md: 6 }}>
-              <FormLabel htmlFor="email" required>
+              <FormLabel
+                htmlFor="email"
+                required
+                sx={{ color: "rgb(255 255 255 / 70%)" }}
+              >
                 Email
               </FormLabel>
               <OutlinedInput
@@ -143,10 +159,30 @@ export default function ContactMe() {
                 autoComplete="email"
                 required
                 size="small"
+                sx={{
+                  color: gray[300],
+                  backgroundColor: gray[900],
+                  border: `1px solid ${gray[700]}`,
+                  boxShadow: `0 2px 2px ${gray[900]}`,
+                  "&:hover": {
+                    borderColor: gray[500],
+                  },
+                  "&:focus": {
+                    borderColor: brand[400],
+                    boxShadow: `0 0 0 3px ${brand[600]}`,
+                  },
+                  "&:focus-visible": {
+                    outline: 0,
+                  },
+                }}
               />
             </FormGrid>
             <FormGrid size={{ xs: 12 }}>
-              <FormLabel htmlFor="message" required>
+              <FormLabel
+                htmlFor="message"
+                required
+                sx={{ color: "rgb(255 255 255 / 70%)" }}
+              >
                 Message
               </FormLabel>
               <Textarea

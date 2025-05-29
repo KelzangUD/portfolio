@@ -5,15 +5,12 @@ const HeroBox = ({ children }) => {
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={() => ({
         width: "100%",
         backgroundRepeat: "no-repeat",
         backgroundImage:
-          "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
-        ...theme.applyStyles("dark", {
-          backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
-        }),
+          "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), #000)",
+        paddingBottom: "10px",
       })}
     >
       {children}

@@ -62,6 +62,7 @@ export default function Timelines() {
                         ? { xs: "left", md: "right" }
                         : { xs: "left" },
                     fontWeight: "600",
+                    color: "#eee"
                   }}
                 >
                   {item?.year}
@@ -75,6 +76,7 @@ export default function Timelines() {
                         : { xs: "left" },
                     fontWeight: 200,
                     fontFamily: "Titan One, sans-serif",
+                    color: "#eee"
                   }}
                 >
                   {item?.company}
@@ -88,6 +90,7 @@ export default function Timelines() {
                         : { xs: "left" },
                     fontWeight: "600",
                     mb: 2,
+                    color: "#eee"
                   }}
                 >
                   {item?.role}
@@ -98,6 +101,7 @@ export default function Timelines() {
                       (index + 1) % 2 === 0
                         ? { xs: "left", md: "right" }
                         : { xs: "left" },
+                    color: "rgb(255 255 255 / 70%)",
                   }}
                 >
                   {item?.description}

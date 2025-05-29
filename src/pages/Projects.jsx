@@ -47,6 +47,7 @@ export default function Projects() {
               fontSize: "clamp(2rem, 10vw, 3rem)",
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
+              color: "#eee",
             }}
           >
             Projects
@@ -58,10 +59,7 @@ export default function Projects() {
           >
             {projects?.map((item) => (
               <>
-                <Grid
-                  size={projects?.length === 1 ? 12 : 6}
-                  key={item?.id}
-                >
+                <Grid size={projects?.length === 1 ? 12 : 6} key={item?.id}>
                   <Slide direction="up" triggerOnce>
                     <ProjectCard
                       item={item}
@@ -85,6 +83,11 @@ export default function Projects() {
                 shape="rounded"
                 count={projects?.meta?.pagination?.page}
                 boundaryCount={5}
+                sx={{
+                  "& .MuiPaginationItem-icon": {
+                    color: "rgb(255 255 255 / 70%)",
+                  },
+                }}
               />
             </Stack>
           </Grid>

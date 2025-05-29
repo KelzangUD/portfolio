@@ -72,6 +72,7 @@ export default function Hero() {
                   fontSize: "clamp(2rem, 10vw, 1rem)",
                   fontFamily: "Titan One, sans-serif",
                   fontWeight: 300,
+                  color: "#eee"
                 }}
               >
                 GREETING,
@@ -82,6 +83,7 @@ export default function Hero() {
                   fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
                   fontWeight: 300,
+                  color: "#eee"
                 }}
               >
                 I ’ M
@@ -92,6 +94,7 @@ export default function Hero() {
                   fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
                   fontWeight: 300,
+                  color: "#eee"
                 }}
               >
                 KELZANG UGYEN DORJI.
@@ -103,6 +106,7 @@ export default function Hero() {
                   width: "100%",
                   fontFamily: "Satisfy, sans-serif",
                   my: 2,
+                  color: 'rgb(255 255 255 / 70%)'
                 }}
               >
                 {heroData[0]?.subheader}

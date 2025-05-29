@@ -43,6 +43,7 @@ export default function Gallery() {
             fontSize: "clamp(2rem, 10vw, 3rem)",
             fontFamily: "Titan One, sans-serif",
             fontWeight: 300,
+            color: "#eee",
           }}
         >
           Gallery
@@ -59,6 +60,11 @@ export default function Gallery() {
           shape="rounded"
           count={gallery?.meta?.pagination?.page}
           boundaryCount={5}
+          sx={{
+            "& .MuiPaginationItem-icon": {
+              color: "rgb(255 255 255 / 70%)",
+            },
+          }}
         />
       </Grid>
     </Container>

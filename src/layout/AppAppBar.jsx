@@ -22,10 +22,8 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
   backdropFilter: "blur(24px)",
   border: "1px solid",
-  borderColor: (theme.vars || theme).palette.divider,
-  backgroundColor: theme.vars
-    ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.4)`
-    : alpha(theme.palette.background.default, 0.4),
+  borderColor: "#ffffff1a",
+  backgroundColor: "transparent",
   boxShadow: (theme.vars || theme).shadows[1],
   padding: "8px 12px",
 }));
@@ -137,8 +135,17 @@ export default function AppAppBar() {
               Contact Me
             </Button>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" }, gap: 1 }}>
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              gap: 1,
+            }}
+          >
+            <IconButton
+              aria-label="Menu button"
+              onClick={toggleDrawer(true)}
+              sx={{ color: "#eee" }}
+            >
               <MenuIcon />
             </IconButton>
             <Drawer
@@ -151,14 +158,17 @@ export default function AppAppBar() {
                 },
               }}
             >
-              <Box sx={{ p: 2, backgroundColor: "background.default" }}>
+              <Box sx={{ p: 2, backgroundColor: "#000" }}>
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "flex-end",
                   }}
                 >
-                  <IconButton onClick={toggleDrawer(false)}>
+                  <IconButton
+                    onClick={toggleDrawer(false)}
+                    sx={{ color: "#eee" }}
+                  >
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
@@ -184,6 +194,7 @@ export default function AppAppBar() {
                       navigate("/about-me");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     About Me
                   </Button>
@@ -197,6 +208,7 @@ export default function AppAppBar() {
                       navigate("/projects");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     Projects
                   </Button>
@@ -210,6 +222,7 @@ export default function AppAppBar() {
                       navigate("/blogs");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     Blogs
                   </Button>
@@ -220,9 +233,10 @@ export default function AppAppBar() {
                     variant="text"
                     fullWidth
                     onClick={() => {
-                      navigate("/gallery");
+                      navigate("/vlogs");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     Vlogs
                   </Button>
@@ -236,6 +250,7 @@ export default function AppAppBar() {
                       navigate("/gallery");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     Gallery
                   </Button>
@@ -250,6 +265,7 @@ export default function AppAppBar() {
                       navigate("/contact-me");
                       setOpen(false);
                     }}
+                    sx={{ border: "2px solid #ffffff1a" }}
                   >
                     Contact me
                   </Button>

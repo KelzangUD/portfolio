@@ -13,9 +13,6 @@ export default function HeroImage({ img }) {
     [theme.breakpoints.up("sm")]: {
       height: 500,
     },
-    ...(theme.palette.mode === "dark" && {
-      backgroundImage: `url(${img})`,
-    }),
   }));
   return <StyledBox id="image" />;
 }

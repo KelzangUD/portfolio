@@ -9,7 +9,7 @@ const Techs = ({ tech, index }) => {
         sx={{
           my: 2,
           textAlign: "left",
-          color: "text.secondary",
+          color: "rgb(255 255 255 / 70%)",
           fontFamily: "Titan One, sans-serif",
         }}
       >

@@ -50,6 +50,7 @@ export default function Project() {
               color: "text.primary",
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
+              color: "#eee",
             }}
           >
             {project?.title}
@@ -71,13 +72,14 @@ export default function Project() {
             sx={{
               color: "text.secondary",
               textAlign: "justify",
+              color: "rgb(255 255 255 / 70%)",
             }}
           >
             {project?.description}
           </Typography>
           <Typography
             sx={{
-              color: "text.secondary",
+              color: "rgb(255 255 255 / 70%)",
               my: 2,
             }}
           >
@@ -85,10 +87,10 @@ export default function Project() {
           </Typography>
           <Typography
             sx={{
-              color: "text.secondary",
+              color: "rgb(255 255 255 / 70%)",
             }}
           >
-            Techstacks: {project?.techStacks}
+            Tech-Stacks: {project?.techStacks}
           </Typography>
           <Grid>
             <Stack

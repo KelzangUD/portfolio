@@ -28,7 +28,8 @@ export default function Intro() {
               alignItems: "left",
               fontSize: "clamp(2rem, 10vw, 1rem)",
               fontFamily: "Titan One, sans-serif",
-              fontWeight: 300
+              fontWeight: 300,
+              color: '#eee',
             }}
           >
             KUZUZANGPO,
@@ -38,7 +39,8 @@ export default function Intro() {
             sx={{
               fontSize: "clamp(3rem, 10vw, 2rem)",
               fontFamily: "Titan One, sans-serif",
-              fontWeight: 300
+              fontWeight: 300,
+              color: '#eee',
             }}
           >
             I'm Kelzang Ugyen Dorji.
@@ -49,6 +51,7 @@ export default function Intro() {
               lineHeight: 2,
               my: 2,
               textAlign: "justify",
+              color: 'rgb(255 255 255 / 70%)',
             }}
           >
             With a passion for crafting exceptional digital experiences, I bring

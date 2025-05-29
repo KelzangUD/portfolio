@@ -49,6 +49,7 @@ export default function StatisticsCard({ item }) {
             : "clamp(1rem, 3vw, 3rem)",
           fontWeight: "bold",
           fontFamily: "Titan One, sans-serif",
+          color: "#eee"
         }}
       >
         {triggerAnimation && (
@@ -74,6 +75,7 @@ export default function StatisticsCard({ item }) {
           fontSize: isMobile ? "0.9rem" : "1rem",
           maxWidth: "300px",
           margin: "0 auto",
+          color: 'rgb(255 255 255 / 70%)'
         }}
       >
         {item?.description}
