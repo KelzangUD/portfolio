@@ -35,7 +35,7 @@ export default function TechStacks() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "overlay",
-          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backgroundColor: "rgba(0, 0, 0, 0.9)",
           alignItems: "center",
         }}
       >

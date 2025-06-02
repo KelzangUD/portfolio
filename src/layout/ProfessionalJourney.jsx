@@ -7,7 +7,7 @@ export default function ProfessionalJourney() {
   return (
     <Container maxWidth="lg">
       <Box
-        id="professionalJouney"
+        id="professionalJourney"
         sx={{
           py: 4,
           width: "100%",
@@ -16,7 +16,7 @@ export default function ProfessionalJourney() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "overlay",
-          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backgroundColor: "rgba(0, 0, 0, 0.9)",
         }}
       >
         <Header

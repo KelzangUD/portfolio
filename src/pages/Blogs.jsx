@@ -93,7 +93,7 @@ export default function Blogs() {
             <BlogCard item={item} index={index} key={index} />
           ))}
         </Grid>
-        <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0 }}>
+        {/* <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0 }}>
           <Pagination
             variant="outlined"
             shape="rounded"
@@ -105,7 +105,7 @@ export default function Blogs() {
               },
             }}
           />
-        </Box>
+        </Box> */}
       </Box>
     </Container>
   );

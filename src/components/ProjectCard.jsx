@@ -16,9 +16,7 @@ export default function ProjectCard({ item, height = 700 }) {
     marginTop: isMobile ? theme.spacing(1) : theme.spacing(6),
     borderRadius: (theme.vars || theme).shape.borderRadius,
     outline: "6px solid",
-
     border: "1px solid",
-
     backgroundImage: `url(${item?.img_url})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -26,14 +24,15 @@ export default function ProjectCard({ item, height = 700 }) {
     [theme.breakpoints.up("sm")]: {
       height: height,
     },
-
     boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
     outlineColor: "hsla(220, 20%, 42%, 0.1)",
     borderColor: (theme.vars || theme).palette.grey[700],
     "&:hover": {
+      background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.39), rgba(255, 255, 255, 0.1))`,
+      opacity: 1,
       boxShadow: "0 0 32px 16px hsla(210, 100%, 30%, 0.4)",
       transform: "scale(1.01)",
-      outlineColor: "hsla(220, 20%, 50%, 0.5)",
+      outlineColor: "hsla(240, 0.50%, 62.90%, 0.50)",
     },
     "& .hoverContent": {
       position: "absolute",
