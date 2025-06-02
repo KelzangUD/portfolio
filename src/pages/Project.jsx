@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
+  Chip,
   Container,
   Grid2 as Grid,
   Stack,
@@ -90,7 +91,10 @@ export default function Project() {
               color: "rgb(255 255 255 / 70%)",
             }}
           >
-            Tech-Stacks: {project?.techStacks}
+            Tech-Stacks:{" "}
+            {project?.techStacks?.split(",").map((item) => (
+              <Chip label={item} key={item} sx={{mr: 1}} />
+            ))}
           </Typography>
           <Grid>
             <Stack

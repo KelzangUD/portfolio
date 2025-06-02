@@ -8,7 +8,8 @@ import Typography from "@mui/material/Typography";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/X";
+// import TwitterIcon from "@mui/icons-material/X";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -47,7 +48,7 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="small"
-              href="https://www.linkedin.com/company/mui/"
+              href="https://www.linkedin.com/in/kelzang-ugyen-dorji-a461b979/"
               aria-label="LinkedIn"
               sx={{ alignSelf: "center", color: "#eee" }}
             >
@@ -56,7 +57,7 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="small"
-              href="https://www.linkedin.com/company/mui/"
+              href="https://www.instagram.com/kud_capture/"
               aria-label="LinkedIn"
               sx={{ alignSelf: "center", color: "#eee" }}
             >
@@ -65,7 +66,7 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="small"
-              href="https://github.com/mui"
+              href="https://www.facebook.com/kelzangud"
               aria-label="GitHub"
               sx={{ alignSelf: "center", color: "#eee" }}
             >
@@ -74,16 +75,16 @@ export default function Footer() {
             <IconButton
               color="inherit"
               size="small"
-              href="https://x.com/MaterialUI"
+              href="https://github.com/KelzangUD"
               aria-label="X"
               sx={{ alignSelf: "center", color: "#eee" }}
             >
-              <TwitterIcon />
+              <GitHubIcon />
             </IconButton>
             <IconButton
               color="inherit"
               size="small"
-              href="https://x.com/MaterialUI"
+              href="https://www.youtube.com/@kud_capture"
               aria-label="X"
               sx={{ alignSelf: "center", color: "#eee" }}
             >
