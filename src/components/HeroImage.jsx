@@ -1,18 +1,25 @@
 import React from "react";
-import { styled } from "@mui/material";
+import { Box } from "@mui/material";
 
-export default function HeroImage({ img }) {
-  const StyledBox = styled("div")(({ theme }) => ({
-    alignSelf: "right",
-    width: "auto",
-    height: 500,
-    backgroundImage: `url(${img})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    backgroundSize: "contain",
-    [theme.breakpoints.up("sm")]: {
-      height: 500,
-    },
-  }));
-  return <StyledBox id="image" />;
+export default function HeroImage({ img, alt = "Hero image" }) {
+  return (
+    <Box
+      id="image"
+      component="img"
+      src={img}
+      alt={alt}
+      loading="eager"
+      width="100%"
+      height="auto"
+      sx={{
+        alignSelf: "flex-end",
+        maxHeight: 500,
+        objectFit: "contain",
+        [theme => theme.breakpoints.up("sm")]: {
+          maxHeight: 500,
+        },
+      }}
+    />
+  );
 }
+
