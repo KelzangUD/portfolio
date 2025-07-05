@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "year": "2022-Present",
+    "company": "Tashi InfoComm Private Limited",
+    "role": "Software Developer",
+    "description": "As a Software Developer, my role revolves around translating concepts into functional and scalable software applications. Ispecialize in writing clean, efficient code to build robust and user-friendly solutions. From conceptualization to deployment, I thrive on problem-solving and innovation, ensuring that every line of code contributes to a seamless user experience."
+  },
+  {
+    "id": 2,
+    "year": "2021-2022",
+    "company": "Next Generation Next Technology",
+    "role": "Software Developer",
+    "description": "As a Software Developer, my role revolves around translating concepts into functional and scalable software applications. Ispecialize in writing clean, efficient code to build robust and user-friendly solutions. From conceptualization to deployment, I thrive on problem-solving and innovation, ensuring that every line of code contributes to a seamless user experience."
+  },
+  {
+    "id": 3,
+    "year": "2021-2021",
+    "company": "Fuzzy Automation",
+    "role": "Electronics Engineer",
+    "description": "In this role, I leverage my expertise to design and implement cutting-edge electronic systems. From concept to execution, I am committed to transforming ideas into tangible solutions, ensuring seamless integration and optimal performance."
+  }
+]

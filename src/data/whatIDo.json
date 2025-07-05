@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Coding",
+    "icon": "Code",
+    "description": "Web app development is the process of building interactive and dynamic applications that run on web browsers. Unlike traditional desktop applications, web apps are accessed via the internet, allowing users to interact with them from any device with a web browser."
+  },
+  {
+    "title": "Blogging",
+    "icon": "Create",
+    "description": "Blogging is the practice of writing and publishing content on the internet, typically through a personal or professional website. It allows individuals to share their thoughts, ideas, experiences, or expertise on a variety of topics. "
+  },
+  {
+    "title": "Content Creation",
+    "icon": "MovieCreation",
+    "description": "Content creation is the process of producing digital material, such as text, images, videos, and audio, for online platforms. It involves crafting engaging and informative content that resonates with a target audience."
+  },
+  {
+    "title": "Hiking",
+    "icon": "Hiking",
+    "description": "Hiking is an outdoor activity that involves walking in natural environments, often on trails or paths, for recreation, exercise, or exploration. It allows individuals to connect with nature, enjoy scenic views, and challenge themselves physically. "
+  }
+]

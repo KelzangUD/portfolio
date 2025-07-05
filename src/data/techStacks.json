@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Hardware",
+    "icons": [
+      {
+        "alt": "Arduino",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/arduino.svg"
+      },
+      {
+        "alt": "Pi-Top",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/pi-top.svg"
+      }
+    ]
+  },
+  {
+    "title": "Programming",
+    "icons": [
+      {
+        "alt": "React Js",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/react js.svg"
+      },
+      {
+        "alt": "Tailwind CSS",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/tailwind css.svg"
+      },
+      {
+        "alt": "MUI",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/material ui.svg"
+      },
+      {
+        "alt": "Express JS",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/express js.svg"
+      },
+      {
+        "alt": "MySql",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/mysql.svg"
+      },
+      {
+        "alt": "Bootstrap",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/bootstrap.svg"
+      }
+    ]
+  },
+  {
+    "title": "Software",
+    "icons": [
+      {
+        "alt": "SolidWork",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/solidworks.svg"
+      },
+      {
+        "alt": "Blender",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/blender.svg"
+      },
+      {
+        "alt": "AutodeskEagle",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/autodesk eagle.svg"
+      },
+      {
+        "alt": "OrcadPSPice",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/orcad pspice.svg"
+      }
+    ]
+  }
+]

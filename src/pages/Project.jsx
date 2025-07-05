@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -9,30 +9,19 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
-import axios from "axios";
 import { Slide, Fade } from "react-awesome-reveal";
+import projectData from "../data/projects.json";
 
 export default function Project() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const pathName = window?.location?.pathname;
   const [project, setProject] = useState([]);
-  const fetchProjectData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api${pathName}?populate=*`
-      );
-      if (response.status === 200) {
-        setProject(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
+
   useEffect(() => {
-    fetchProjectData();
-    // eslint-disable-next-line
-  }, []);
+    const id = parseInt(pathName?.split("/")[2]);
+    setProject(projectData?.find((item) => item?.id === id));
+  }, [pathName]);
   return (
     <Container
       maxWidth="lg"
@@ -48,7 +37,6 @@ export default function Project() {
             variant="subtitle2"
             sx={{
               fontSize: "clamp(2rem, 5vw, 3rem)",
-              color: "text.primary",
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
               color: "#eee",
@@ -71,7 +59,6 @@ export default function Project() {
         <Fade delay={1500} duration={1000} triggerOnce fraction={0.5}>
           <Typography
             sx={{
-              color: "text.secondary",
               textAlign: "justify",
               color: "rgb(255 255 255 / 70%)",
             }}
@@ -93,7 +80,7 @@ export default function Project() {
           >
             Tech-Stacks:{" "}
             {project?.techStacks?.split(",").map((item) => (
-              <Chip label={item} key={item} sx={{mr: 1}} />
+              <Chip label={item} key={item} sx={{ mr: 1 }} />
             ))}
           </Typography>
           <Grid>

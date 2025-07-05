@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -8,28 +7,10 @@ import {
   Typography,
 } from "@mui/material";
 import { HeroImage } from "../components/index";
-import axios from "axios";
+import hero_img from "../assets/svgs/hero_img.svg";
 
 export default function Hero() {
   const navigate = useNavigate();
-  const [heroData, setHeroData] = useState([]);
-  const fetchHeroData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/heroes?populate=*`
-      );
-      if (response.status === 200) {
-        setHeroData(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchHeroData();
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <>
       <Container
@@ -72,7 +53,7 @@ export default function Hero() {
                   fontSize: "clamp(2rem, 10vw, 1rem)",
                   fontFamily: "Titan One, sans-serif",
                   fontWeight: 300,
-                  color: "#eee"
+                  color: "#eee",
                 }}
               >
                 GREETING,
@@ -83,7 +64,7 @@ export default function Hero() {
                   fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
                   fontWeight: 300,
-                  color: "#eee"
+                  color: "#eee",
                 }}
               >
                 I ’ M
@@ -94,7 +75,7 @@ export default function Hero() {
                   fontFamily: "Titan One, sans-serif",
                   fontSize: "clamp(3rem, 10vw, 3.5rem)",
                   fontWeight: 300,
-                  color: "#eee"
+                  color: "#eee",
                 }}
               >
                 KELZANG UGYEN DORJI.
@@ -102,14 +83,13 @@ export default function Hero() {
               <Typography
                 variant="h5"
                 sx={{
-                  color: "text.secondary",
                   width: "100%",
                   fontFamily: "Satisfy, sans-serif",
                   my: 2,
-                  color: 'rgb(255 255 255 / 70%)'
+                  color: "rgb(255 255 255 / 70%)",
                 }}
               >
-                {heroData[0]?.subheader}
+                Tech enthusiast from the Land of Thunder Dragon.
               </Typography>
               <Stack
                 useFlexGap
@@ -146,7 +126,7 @@ export default function Hero() {
               },
             }}
           >
-            <HeroImage img={heroData[0]?.url} alt="Hero image" />
+            <HeroImage img={hero_img} alt="Hero image" />
           </Grid>
         </Grid>
       </Container>

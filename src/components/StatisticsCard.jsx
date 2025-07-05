@@ -78,7 +78,7 @@ export default function StatisticsCard({ item }) {
           color: 'rgb(255 255 255 / 70%)'
         }}
       >
-        {item?.description}
+        {item?.title}
       </Typography>
     </Grid>
   );

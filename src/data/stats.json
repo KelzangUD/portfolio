@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "figure": 1,
+    "title": "Projects"
+  },
+  {
+    "id": 2,
+    "figure": 2,
+    "title": "Blogs"
+  },
+  {
+    "id": 3,
+    "figure": 9,
+    "title": "Videos"
+  },
+  {
+    "id": 4,
+    "figure": 17,
+    "title": "Hiking"
+  }
+]

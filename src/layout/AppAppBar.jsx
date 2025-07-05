@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import Logo from "../components/Logo";
+import logo from "../assets/jpgs/logo.png";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
@@ -61,15 +61,20 @@ export default function AppAppBar() {
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ alignItems: "center", px: 0 }}>
-            <Button
-              color="primary"
-              variant="text"
-              size="small"
+            <IconButton
+              aria-label="Logo"
               onClick={() => navigate("/")}
-              sx={{ width: "90px", justifyContent: "justify-between" }}
+              sx={{ border: "none" }}
             >
-              <Logo />
-            </Button>
+              <img
+                src={logo}
+                alt="logo"
+                style={{
+                  height: "45px",
+                  width: "auto",
+                }}
+              />
+            </IconButton>
           </Box>
           <Box
             sx={{
@@ -174,15 +179,22 @@ export default function AppAppBar() {
                 </Box>
                 <MenuItem>
                   <Button
-                    color="primary"
-                    variant="text"
-                    fullWidth
+                    sx={{
+                      border: "none",
+                    }}
                     onClick={() => {
                       navigate("/");
                       setOpen(false);
                     }}
                   >
-                    <Logo />
+                    <img
+                      src={logo}
+                      alt="logo"
+                      style={{
+                        height: "25px",
+                        width: "auto",
+                      }}
+                    />
                   </Button>
                 </MenuItem>
                 <MenuItem>

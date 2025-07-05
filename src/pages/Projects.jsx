@@ -1,34 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
 import {
-  Button,
+  Box,
   Container,
   Grid2 as Grid,
-  Stack,
-  Pagination,
+  // Pagination,
   Typography,
 } from "@mui/material";
 import { ProjectCard } from "../components/index";
-import axios from "axios";
-import { Slide } from "react-awesome-reveal";
+import projectsData from "../data/projects.json";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-  const fetchProjectsData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/projects?populate=*`
-      );
-      if (response.status === 200) {
-        setProjects(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchProjectsData();
-  }, []);
   return (
     <>
       <Container
@@ -57,20 +37,18 @@ export default function Projects() {
             sx={{ justifyContent: "center", opacity: 0.9 }}
             spacing={2}
           >
-            {projects?.map((item) => (
+            {projectsData?.map((item) => (
               <>
-                <Grid size={projects?.length === 1 ? 12 : 6} key={item?.id}>
-                  <Slide direction="up" triggerOnce>
-                    <ProjectCard
-                      item={item}
-                      height={projects?.length === 1 ? 700 : 400}
-                    />
-                  </Slide>
+                <Grid size={12} key={item?.id}>
+                  <ProjectCard
+                    item={item}
+                    // height={projects?.length === 1 ? 1000 : 400}
+                  />
                 </Grid>
               </>
             ))}
           </Grid>
-          <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
+          {/* <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Stack
               useFlexGap
               sx={{
@@ -90,8 +68,8 @@ export default function Projects() {
                 }}
               />
             </Stack>
-          </Grid>
-          <Grid>
+          </Grid> */}
+          {/* <Grid>
             <Stack
               useFlexGap
               sx={{
@@ -109,7 +87,7 @@ export default function Projects() {
                 View All
               </Button>
             </Stack>
-          </Grid>
+          </Grid> */}
         </Box>
       </Container>
     </>

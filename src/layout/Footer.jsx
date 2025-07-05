@@ -103,7 +103,7 @@ export default function Footer() {
           >
             <EmailIcon />
             <Typography variant="body2" sx={{ color: "#eee" }}>
-              Kuding755@gmail.com
+              kelzangud@gmail.com
             </Typography>
             <Divider orientation="vertical" />
             <PhoneIcon />

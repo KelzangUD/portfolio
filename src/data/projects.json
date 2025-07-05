@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio",
+    "description": "In this showcase, I present a carefully curated selection of projects that reflect my commitment to excellence in web development. Each project is a testament to my passion for crafting intuitive and visually compelling digital experiences. Explore the synergy of design and functionality as I walk you through a journey of successful collaborations and impactful solutions that define my expertise as a web developer.",
+    "role": "Full-Stack Developer",
+    "techStacks": "React JS, MUI, Axios, Strapi, Vercel, GitHub",
+    "url": "https://vercel.com/kelzanguds-projects/portfolio/4UWL4rbkz9Kf1gvncFVagwiHGgLt",
+    "img_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio.jpg",
+    "mock_up_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio_mockup.png",
+    "date": "2025-05-07"
+  }
+]

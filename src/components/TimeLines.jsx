@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
 import {
@@ -10,29 +9,12 @@ import {
   TimelineDot,
   timelineItemClasses,
 } from "@mui/lab";
-import axios from "axios";
 import { Slide } from "react-awesome-reveal";
+import professionJourneyData from "../data/professionalJourney.json";
 
 export default function Timelines() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [project, setProject] = useState([]);
-  const fetchProfessionalData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/professional-journeys`
-      );
-      if (response.status === 200) {
-        setProject(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchProfessionalData();
-    // eslint-disable-next-line
-  }, []);
 
   return (
     <Slide direction="up" triggerOnce>
@@ -47,12 +29,14 @@ export default function Timelines() {
           }),
         }}
       >
-        {project?.length > 0 &&
-          project?.map((item, index) => (
+        {professionJourneyData?.length > 0 &&
+          professionJourneyData?.map((item, index) => (
             <TimelineItem key={`${item?.company}&${item?.role}`}>
               <TimelineSeparator>
                 <TimelineDot />
-                {index < project.length - 1 && <TimelineConnector />}
+                {index < professionJourneyData?.length - 1 && (
+                  <TimelineConnector />
+                )}
               </TimelineSeparator>
               <TimelineContent>
                 <Typography
@@ -62,7 +46,7 @@ export default function Timelines() {
                         ? { xs: "left", md: "right" }
                         : { xs: "left" },
                     fontWeight: "600",
-                    color: "#eee"
+                    color: "#eee",
                   }}
                 >
                   {item?.year}
@@ -76,7 +60,7 @@ export default function Timelines() {
                         : { xs: "left" },
                     fontWeight: 200,
                     fontFamily: "Titan One, sans-serif",
-                    color: "#eee"
+                    color: "#eee",
                   }}
                 >
                   {item?.company}
@@ -90,7 +74,7 @@ export default function Timelines() {
                         : { xs: "left" },
                     fontWeight: "600",
                     mb: 2,
-                    color: "#eee"
+                    color: "#eee",
                   }}
                 >
                   {item?.role}

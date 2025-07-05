@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import { Container, Grid2 as Grid, styled, Typography } from "@mui/material";
-import axios from "axios";
 import { Slide } from "react-awesome-reveal";
 import ReactPlayer from "react-player";
+import vlogsData from "../data/vlogs.json";
 
 const StyledBox = styled("div")(({ theme }) => ({
   padding: "0 32px",
@@ -39,23 +38,6 @@ const StyledBox = styled("div")(({ theme }) => ({
 }));
 
 export default function Vlogs() {
-  const [vlogs, setVlogs] = useState([]);
-  const fetchVlogsData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/vlogs?populate=*`
-      );
-      if (response.status === 200) {
-        setVlogs(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchVlogsData();
-    // eslint-disable-next-line
-  }, []);
   return (
     <>
       <Container
@@ -74,7 +56,7 @@ export default function Vlogs() {
               fontSize: "clamp(2rem, 10vw, 3rem)",
               fontFamily: "Titan One, sans-serif",
               fontWeight: 300,
-              color: "#eee"
+              color: "#eee",
             }}
           >
             Vlogs
@@ -85,7 +67,7 @@ export default function Vlogs() {
             spacing={2}
             mt={4}
           >
-            {vlogs?.map((item) => (
+            {vlogsData?.map((item) => (
               <>
                 <Grid size={{ xs: 12, md: 6 }} key={item?.url}>
                   <Slide direction="up" triggerOnce>
@@ -96,14 +78,13 @@ export default function Vlogs() {
                       variant="subtitle2"
                       sx={{
                         fontSize: "clamp(1rem, 2vw, 1rem)",
-                        color: "text.primary",
                         fontFamily: "Titan One, sans-serif",
                         fontWeight: 100,
                         marginTop: "16px",
-                        color: "#eee"
+                        color: "#eee",
                       }}
                     >
-                      {item?.Title}
+                      {item?.title}
                     </Typography>
                   </Slide>
                 </Grid>

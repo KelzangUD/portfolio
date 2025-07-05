@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
-import { Button, Container, Grid2 as Grid, Stack } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid2 as Grid,
+  Stack,
+} from "@mui/material";
 import { Header, ProjectCard } from "../components/index";
-import axios from "axios";
 import { Slide } from "react-awesome-reveal";
+import projectData from "../data/projects.json";
 
 export default function Projects() {
   const navigate = useNavigate();
-  const [projects, setProjects] = useState([]);
-  const fetchProjectsData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/projects?populate=*`
-      );
-      if (response.status === 200) {
-        setProjects(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchProjectsData();
-    // eslint-disable-next-line
-  }, []);
   return (
     <Container maxWidth="lg">
       <Box id="projects" sx={{ py: { xs: 0, md: 4 } }}>
@@ -33,7 +20,7 @@ export default function Projects() {
           subheader="“A Glimpse into My Diverse Portfolio of Projects”"
         />
         <Slide direction="up" cascade damping={0.2} triggerOnce>
-          {projects?.map((item, index) => (
+          {projectData?.map((item, index) => (
             <Grid
               container
               sx={{ justifyContent: "center", opacity: 0.9 }}

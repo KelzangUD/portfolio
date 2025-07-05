@@ -1,31 +1,13 @@
-import React, { useState, useEffect } from "react";
 import {
   Box,
   Container,
   Grid2 as Grid,
-  Pagination,
   Typography,
 } from "@mui/material";
 import { GalleryCard } from "../components";
-import axios from "axios";
+import galleryData from "../data/galleries.json";
 
 export default function Gallery() {
-  const [gallery, setGallery] = useState([]);
-  const fetchGalleryData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/galleries?populate=*`
-      );
-      if (response.status === 200) {
-        setGallery(response?.data?.data);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchGalleryData();
-  }, []);
   return (
     <Container
       maxWidth="lg"
@@ -49,16 +31,16 @@ export default function Gallery() {
           Gallery
         </Typography>
         <Grid container spacing={2} columns={12} my={4}>
-          {gallery?.map((item, index) => (
+          {galleryData?.map((item, index) => (
             <GalleryCard item={item} index={index} key={item?.id} />
           ))}
         </Grid>
       </Box>
-      <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
+      {/* <Grid sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Pagination
           variant="outlined"
           shape="rounded"
-          count={gallery?.meta?.pagination?.page}
+          count={galleryData?.meta?.pagination?.page}
           boundaryCount={5}
           sx={{
             "& .MuiPaginationItem-icon": {
@@ -66,7 +48,7 @@ export default function Gallery() {
             },
           }}
         />
-      </Grid>
+      </Grid> */}
     </Container>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { styled, Typography } from "@mui/material";
 import { useTheme, useMediaQuery } from "@mui/system";
@@ -65,9 +64,8 @@ export default function ProjectCard({ item, height = 700 }) {
     },
   }));
   const projectHandle = () => {
-    navigate(`/projects/${item?.documentId}`);
+    navigate(`/projects/${item?.id}`);
   };
-
   return (
     <StyledBox>
       <div className="hoverContent">
