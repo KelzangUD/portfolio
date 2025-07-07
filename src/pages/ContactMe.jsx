@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Alert,
   Box,
@@ -121,12 +121,35 @@ export default function ContactMe() {
         },
       }
     );
-    console.log(response);
-    setUserInput({
-      name: "",
-      email: "",
-      message: "",
-    });
+    if (response?.status === 201) {
+      setUserInputState({
+        nameRequired: false,
+        emailRequired: false,
+        messageRequired: false,
+      });
+      setUserInput({
+        name: "",
+        email: "",
+        message: "",
+      });
+      return (
+        <Alert
+          severity="success"
+          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
+        >
+          Thank You For Message!
+        </Alert>
+      );
+    } else {
+      return (
+        <Alert
+          severity="error"
+          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
+        >
+          Failed To Send Message!
+        </Alert>
+      );
+    }
   };
   return (
     <Container
