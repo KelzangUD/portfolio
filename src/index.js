@@ -8,6 +8,7 @@ import { PostHogProvider } from "posthog-js/react";
 
 const options = {
   api_host: process.env.REACT_APP_POSTHOG_HOST,
+  capture_pageview: false,
   // defaults: "2025-05-24",
 };
 
