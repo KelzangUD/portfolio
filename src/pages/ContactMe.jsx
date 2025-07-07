@@ -122,6 +122,7 @@ export default function ContactMe() {
       }
     );
     console.log("response", response);
+    console.log(response?.status);
     if (response?.status === 201) {
       setUserInputState({
         nameRequired: false,
