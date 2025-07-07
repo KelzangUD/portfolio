@@ -15,6 +15,7 @@
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "markdown-to-jsx": "^7.7.3",
+    "posthog-js": "^1.256.2",
     "react": "^18.3.1",
     "react-animated-numbers": "^1.0.0",
     "react-awesome-reveal": "^4.3.1",
