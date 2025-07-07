@@ -91,7 +91,7 @@ export default function ContactMe() {
     messageRequired: false,
   });
   const [showAlert, setShowAlert] = useState(false);
-  const [alert, setAlert] = useState({ type: "", message: "" });
+  const [alert, setAlert] = useState({ type: "success", message: "" });
   const sendHandle = async () => {
     if (userInput?.name === "") {
       setUserInputState({
@@ -135,8 +135,8 @@ export default function ContactMe() {
         email: "",
         message: "",
       });
-      setShowAlert(true);
       setAlert({ type: "success", message: "Thank you for your message!" });
+      setShowAlert(true);
     } else {
       setShowAlert(true);
       setAlert({ type: "error", message: "Something went wrong!" });
