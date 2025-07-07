@@ -90,6 +90,7 @@ export default function ContactMe() {
     emailRequired: false,
     messageRequired: false,
   });
+  const [showAlert, setShowAlert] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "" });
   const sendHandle = async () => {
     if (userInput?.name === "") {
@@ -134,8 +135,10 @@ export default function ContactMe() {
         email: "",
         message: "",
       });
+      setShowAlert(true);
       setAlert({ type: "success", message: "Thank you for your message!" });
     } else {
+      setShowAlert(true);
       setAlert({ type: "error", message: "Something went wrong!" });
     }
   };
@@ -311,14 +314,19 @@ export default function ContactMe() {
           </Slide>
         </ContactMeContainer>
       </Container>
-      {alert?.message && (
+      {showAlert && (
         <Snackbar
+          open={showAlert}
+          autoHideDuration={6000}
+          onClose={() => setShowAlert(false)}
           anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          open={alert?.message !== "" ? true : false}
-          autoHideDuration={5000}
-          key={{ vertical: "top", horizontal: "right" }}
         >
-          <Alert severity={alert?.type} variant="filled">
+          <Alert
+            onClose={() => setShowAlert(false)}
+            severity={alert?.type}
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
             {alert?.message}
           </Alert>
         </Snackbar>
