@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
+  Alert,
   Box,
   Button,
   Container,
+  FormHelperText,
   FormLabel,
   Grid2 as Grid,
   OutlinedInput,
@@ -12,6 +14,7 @@ import {
 import { TextareaAutosize } from "@mui/base";
 import { gray, brand } from "../theme/themePrimitives";
 import { Fade, Slide } from "react-awesome-reveal";
+import axios from "axios";
 
 const FormGrid = styled(Grid)(() => ({
   display: "flex",
@@ -68,10 +71,63 @@ const Textarea = styled(TextareaAutosize)(
     &:focus-visible {
       outline: 0;
     }
+    &::placeholder {
+      color: ${gray[500]};
+      opacity: 1;
+    }
   `
 );
 
 export default function ContactMe() {
+  const [userInput, setUserInput] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [userInputState, setUserInputState] = useState({
+    nameRequired: false,
+    emailRequired: false,
+    messageRequired: true,
+  });
+  const sendHandle = async () => {
+    if (userInput?.name === "") {
+      setUserInputState({
+        ...userInputState,
+        nameRequired: true,
+      });
+      return;
+    }
+    if (userInput?.email === "") {
+      setUserInputState({
+        ...userInputState,
+        emailRequired: true,
+      });
+      return;
+    }
+    if (userInput?.message === "") {
+      setUserInputState({
+        ...userInputState,
+        messageRequired: true,
+      });
+      return;
+    }
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/api/contacts`,
+      {
+        data: {
+          name: userInput?.name,
+          email: userInput?.email,
+          message: userInput?.message,
+        },
+      }
+    );
+    console.log(response);
+    setUserInput({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
   return (
     <Container
       maxWidth="lg"
@@ -141,7 +197,19 @@ export default function ContactMe() {
                     outline: 0,
                   },
                 }}
+                onChange={(e) => {
+                  setUserInputState({
+                    ...userInputState,
+                    nameRequired: false,
+                  });
+                  setUserInput({ ...userInput, name: e?.target?.value });
+                }}
               />
+              {userInputState?.nameRequired && (
+                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                  Name is required
+                </FormHelperText>
+              )}
             </FormGrid>
             <FormGrid size={{ xs: 12, md: 6 }}>
               <FormLabel
@@ -175,7 +243,19 @@ export default function ContactMe() {
                     outline: 0,
                   },
                 }}
+                onChange={(e) => {
+                  setUserInputState({
+                    ...userInputState,
+                    emailRequired: false,
+                  });
+                  setUserInput({ ...userInput, email: e?.target?.value });
+                }}
               />
+              {userInputState?.emailRequired && (
+                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                  Email is required
+                </FormHelperText>
+              )}
             </FormGrid>
             <FormGrid size={{ xs: 12 }}>
               <FormLabel
@@ -190,9 +270,26 @@ export default function ContactMe() {
                 aria-label="minimum height"
                 minRows={4}
                 placeholder="Message"
+                onChange={(e) => {
+                  setUserInputState({
+                    ...userInputState,
+                    messageRequired: false,
+                  });
+                  setUserInput({ ...userInput, message: e?.target?.value });
+                }}
               />
+              {userInputState?.nameRequired && (
+                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                  Message is required
+                </FormHelperText>
+              )}
             </FormGrid>
-            <Button fullWidth variant="contained" color="primary">
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              onClick={sendHandle}
+            >
               Send
             </Button>
           </Grid>

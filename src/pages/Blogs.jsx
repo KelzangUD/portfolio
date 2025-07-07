@@ -3,15 +3,18 @@ import {
   Box,
   Container,
   Grid2 as Grid,
-  Pagination,
+  // Pagination,
+  Skeleton,
   Typography,
 } from "@mui/material";
 import { BlogCard, CategoryFilter, Search } from "../components/index";
 import axios from "axios";
 
 export default function Blogs() {
+  const [isLoading, setIsLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const fetchBlogs = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/blogs?populate=*`
@@ -21,6 +24,8 @@ export default function Blogs() {
       }
     } catch (error) {
       console.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
   useEffect(() => {
@@ -88,6 +93,24 @@ export default function Blogs() {
             <Search />
           </Box>
         </Box>
+        {
+          isLoading ? (
+            <Grid container spacing={3} columns={12}>
+              {Array.from({ length: 6 }).map((_, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Skeleton variant="rectangular" height={600} />
+                </Grid>
+              ))}
+            </Grid>
+          ) : blogs?.length === 0 ? (
+            <Typography
+              variant="h6"
+              sx={{ color: "#eee", textAlign: "center", width: "100%" }}
+            >
+              No blogs found
+            </Typography>
+          ) : null
+        }
         <Grid container spacing={3} columns={12}>
           {blogs?.map((item, index) => (
             <BlogCard item={item} index={index} key={index} />
