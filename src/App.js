@@ -20,6 +20,7 @@ import {
   Vlogs,
 } from "./pages/index";
 import { AppAppBar, Footer } from "./layout/index";
+import PostHogPageViewTracker from "./PostHogPageViewTracker";
 
 function ScrollToTop({ children }) {
   const location = useLocation();
@@ -70,6 +71,7 @@ function App(props) {
 export default function AppWrapper(props) {
   return (
     <Router>
+      <PostHogPageViewTracker />
       <ScrollToTop>
         <App {...props} />
       </ScrollToTop>
