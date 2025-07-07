@@ -87,7 +87,7 @@ export default function ContactMe() {
   const [userInputState, setUserInputState] = useState({
     nameRequired: false,
     emailRequired: false,
-    messageRequired: true,
+    messageRequired: false,
   });
   const sendHandle = async () => {
     if (userInput?.name === "") {
