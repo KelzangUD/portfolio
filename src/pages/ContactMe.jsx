@@ -9,6 +9,7 @@ import {
   Grid2 as Grid,
   OutlinedInput,
   styled,
+  Snackbar,
   Typography,
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
@@ -122,8 +123,6 @@ export default function ContactMe() {
         },
       }
     );
-    console.log("response", response);
-    console.log(response?.status);
     if (response?.status === 201) {
       setUserInputState({
         nameRequired: false,
@@ -141,183 +140,189 @@ export default function ContactMe() {
     }
   };
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        alignItems: "center",
-        pt: { xs: 14, sm: 20 },
-        pb: { xs: 8, sm: 12 },
-      }}
-    >
-      <Box>
-        <Fade delay={200} duration={1000} fraction={0.5} triggerOnce>
-          <Typography
-            variant="h1"
-            gutterBottom
-            sx={{
-              fontFamily: "Titan One, sans-serif",
-              fontWeight: 300,
-              color: "#eee",
-            }}
-          >
-            Contact Me
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              fontFamily: "Satisfy, sans-serif",
-              color: "rgb(255 255 255 / 70%)",
-            }}
-          >
-            “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
-            Friendly Hello!”
-          </Typography>
-        </Fade>
-      </Box>
-      <ContactMeContainer>
-        <Slide direction="up" triggerOnce>
-          <Grid container spacing={3}>
-            <FormGrid size={{ xs: 12, md: 6 }}>
-              <FormLabel
-                htmlFor="name"
-                required
-                sx={{ color: "rgb(255 255 255 / 70%)" }}
-              >
-                Name
-              </FormLabel>
-              <OutlinedInput
-                id="name"
-                name="name"
-                type="name"
-                placeholder="John"
-                autoComplete="name"
-                required
-                value={userInput?.name}
-                size="small"
-                sx={{
-                  color: gray[300],
-                  backgroundColor: gray[900],
-                  border: `1px solid ${gray[700]}`,
-                  boxShadow: `0 2px 2px ${gray[900]}`,
-                  "&:hover": {
-                    borderColor: gray[500],
-                  },
-                  "&:focus": {
-                    borderColor: brand[400],
-                    boxShadow: `0 0 0 3px ${brand[600]}`,
-                  },
-                  "&:focus-visible": {
-                    outline: 0,
-                  },
-                }}
-                onChange={(e) => {
-                  setUserInputState({
-                    ...userInputState,
-                    nameRequired: false,
-                  });
-                  setUserInput({ ...userInput, name: e?.target?.value });
-                }}
-              />
-              {userInputState?.nameRequired && (
-                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
-                  Name is required
-                </FormHelperText>
-              )}
-            </FormGrid>
-            <FormGrid size={{ xs: 12, md: 6 }}>
-              <FormLabel
-                htmlFor="email"
-                required
-                sx={{ color: "rgb(255 255 255 / 70%)" }}
-              >
-                Email
-              </FormLabel>
-              <OutlinedInput
-                id="email"
-                name="email"
-                type="email"
-                placeholder="john@email.com"
-                autoComplete="email"
-                required
-                value={userInput?.email}
-                size="small"
-                sx={{
-                  color: gray[300],
-                  backgroundColor: gray[900],
-                  border: `1px solid ${gray[700]}`,
-                  boxShadow: `0 2px 2px ${gray[900]}`,
-                  "&:hover": {
-                    borderColor: gray[500],
-                  },
-                  "&:focus": {
-                    borderColor: brand[400],
-                    boxShadow: `0 0 0 3px ${brand[600]}`,
-                  },
-                  "&:focus-visible": {
-                    outline: 0,
-                  },
-                }}
-                onChange={(e) => {
-                  setUserInputState({
-                    ...userInputState,
-                    emailRequired: false,
-                  });
-                  setUserInput({ ...userInput, email: e?.target?.value });
-                }}
-              />
-              {userInputState?.emailRequired && (
-                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
-                  Email is required
-                </FormHelperText>
-              )}
-            </FormGrid>
-            <FormGrid size={{ xs: 12 }}>
-              <FormLabel
-                htmlFor="message"
-                required
-                sx={{ color: "rgb(255 255 255 / 70%)" }}
-              >
-                Message
-              </FormLabel>
-              <Textarea
-                id="message"
-                aria-label="minimum height"
-                minRows={4}
-                placeholder="Message"
-                value={userInput?.message}
-                onChange={(e) => {
-                  setUserInputState({
-                    ...userInputState,
-                    messageRequired: false,
-                  });
-                  setUserInput({ ...userInput, message: e?.target?.value });
-                }}
-              />
-              {userInputState?.nameRequired && (
-                <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
-                  Message is required
-                </FormHelperText>
-              )}
-            </FormGrid>
-            <Button
-              fullWidth
-              variant="contained"
-              color="primary"
-              onClick={sendHandle}
+    <>
+      <Container
+        maxWidth="lg"
+        sx={{
+          alignItems: "center",
+          pt: { xs: 14, sm: 20 },
+          pb: { xs: 8, sm: 12 },
+        }}
+      >
+        <Box>
+          <Fade delay={200} duration={1000} fraction={0.5} triggerOnce>
+            <Typography
+              variant="h1"
+              gutterBottom
+              sx={{
+                fontFamily: "Titan One, sans-serif",
+                fontWeight: 300,
+                color: "#eee",
+              }}
             >
-              Send
-            </Button>
-          </Grid>
-        </Slide>
-      </ContactMeContainer>
-      {alert.message && (
-        <Alert
-          severity={alert.type}
-          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
+              Contact Me
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: "Satisfy, sans-serif",
+                color: "rgb(255 255 255 / 70%)",
+              }}
+            >
+              “Let’s Connect: Reach Out for Collaboration, Questions, or Just a
+              Friendly Hello!”
+            </Typography>
+          </Fade>
+        </Box>
+        <ContactMeContainer>
+          <Slide direction="up" triggerOnce>
+            <Grid container spacing={3}>
+              <FormGrid size={{ xs: 12, md: 6 }}>
+                <FormLabel
+                  htmlFor="name"
+                  required
+                  sx={{ color: "rgb(255 255 255 / 70%)" }}
+                >
+                  Name
+                </FormLabel>
+                <OutlinedInput
+                  id="name"
+                  name="name"
+                  type="name"
+                  placeholder="John"
+                  autoComplete="name"
+                  required
+                  value={userInput?.name}
+                  size="small"
+                  sx={{
+                    color: gray[300],
+                    backgroundColor: gray[900],
+                    border: `1px solid ${gray[700]}`,
+                    boxShadow: `0 2px 2px ${gray[900]}`,
+                    "&:hover": {
+                      borderColor: gray[500],
+                    },
+                    "&:focus": {
+                      borderColor: brand[400],
+                      boxShadow: `0 0 0 3px ${brand[600]}`,
+                    },
+                    "&:focus-visible": {
+                      outline: 0,
+                    },
+                  }}
+                  onChange={(e) => {
+                    setUserInputState({
+                      ...userInputState,
+                      nameRequired: false,
+                    });
+                    setUserInput({ ...userInput, name: e?.target?.value });
+                  }}
+                />
+                {userInputState?.nameRequired && (
+                  <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                    Name is required
+                  </FormHelperText>
+                )}
+              </FormGrid>
+              <FormGrid size={{ xs: 12, md: 6 }}>
+                <FormLabel
+                  htmlFor="email"
+                  required
+                  sx={{ color: "rgb(255 255 255 / 70%)" }}
+                >
+                  Email
+                </FormLabel>
+                <OutlinedInput
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="john@email.com"
+                  autoComplete="email"
+                  required
+                  value={userInput?.email}
+                  size="small"
+                  sx={{
+                    color: gray[300],
+                    backgroundColor: gray[900],
+                    border: `1px solid ${gray[700]}`,
+                    boxShadow: `0 2px 2px ${gray[900]}`,
+                    "&:hover": {
+                      borderColor: gray[500],
+                    },
+                    "&:focus": {
+                      borderColor: brand[400],
+                      boxShadow: `0 0 0 3px ${brand[600]}`,
+                    },
+                    "&:focus-visible": {
+                      outline: 0,
+                    },
+                  }}
+                  onChange={(e) => {
+                    setUserInputState({
+                      ...userInputState,
+                      emailRequired: false,
+                    });
+                    setUserInput({ ...userInput, email: e?.target?.value });
+                  }}
+                />
+                {userInputState?.emailRequired && (
+                  <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                    Email is required
+                  </FormHelperText>
+                )}
+              </FormGrid>
+              <FormGrid size={{ xs: 12 }}>
+                <FormLabel
+                  htmlFor="message"
+                  required
+                  sx={{ color: "rgb(255 255 255 / 70%)" }}
+                >
+                  Message
+                </FormLabel>
+                <Textarea
+                  id="message"
+                  aria-label="minimum height"
+                  minRows={4}
+                  placeholder="Message"
+                  value={userInput?.message}
+                  onChange={(e) => {
+                    setUserInputState({
+                      ...userInputState,
+                      messageRequired: false,
+                    });
+                    setUserInput({ ...userInput, message: e?.target?.value });
+                  }}
+                />
+                {userInputState?.nameRequired && (
+                  <FormHelperText sx={{ color: "rgb(255 255 255 / 70%)" }}>
+                    Message is required
+                  </FormHelperText>
+                )}
+              </FormGrid>
+              <Button
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={sendHandle}
+              >
+                Send
+              </Button>
+            </Grid>
+          </Slide>
+        </ContactMeContainer>
+      </Container>
+      {alert?.message && (
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          open={alert?.message !== "" ? true : false}
+          autoHideDuration={5000}
+          key={{ vertical: "top", horizontal: "right" }}
         >
-          {alert.message}
-        </Alert>
+          <Alert severity={alert?.type} variant="filled">
+            {alert?.message}
+          </Alert>
+        </Snackbar>
       )}
-    </Container>
+    </>
   );
 }
