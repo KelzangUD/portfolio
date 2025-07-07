@@ -89,6 +89,7 @@ export default function ContactMe() {
     emailRequired: false,
     messageRequired: false,
   });
+  const [alert, setAlert] = useState({ type: "", message: "" });
   const sendHandle = async () => {
     if (userInput?.name === "") {
       setUserInputState({
@@ -134,23 +135,9 @@ export default function ContactMe() {
         email: "",
         message: "",
       });
-      return (
-        <Alert
-          severity="success"
-          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
-        >
-          Thank You For Message!
-        </Alert>
-      );
+      setAlert({ type: "success", message: "Thank you for your message!" });
     } else {
-      return (
-        <Alert
-          severity="error"
-          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
-        >
-          Failed To Send Message!
-        </Alert>
-      );
+      setAlert({ type: "error", message: "Something went wrong!" });
     }
   };
   return (
@@ -205,6 +192,7 @@ export default function ContactMe() {
                 placeholder="John"
                 autoComplete="name"
                 required
+                value={userInput?.name}
                 size="small"
                 sx={{
                   color: gray[300],
@@ -251,6 +239,7 @@ export default function ContactMe() {
                 placeholder="john@email.com"
                 autoComplete="email"
                 required
+                value={userInput?.email}
                 size="small"
                 sx={{
                   color: gray[300],
@@ -295,6 +284,7 @@ export default function ContactMe() {
                 aria-label="minimum height"
                 minRows={4}
                 placeholder="Message"
+                value={userInput?.message}
                 onChange={(e) => {
                   setUserInputState({
                     ...userInputState,
@@ -320,6 +310,14 @@ export default function ContactMe() {
           </Grid>
         </Slide>
       </ContactMeContainer>
+      {alert.message && (
+        <Alert
+          severity={alert.type}
+          sx={{ width: "100%", marginTop: 2, marginBottom: 2 }}
+        >
+          {alert.message}
+        </Alert>
+      )}
     </Container>
   );
 }
