@@ -319,17 +319,9 @@ export default function ContactMe() {
           open={showAlert}
           autoHideDuration={6000}
           onClose={() => setShowAlert(false)}
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        >
-          <Alert
-            onClose={() => setShowAlert(false)}
-            severity={alert?.type}
-            variant="filled"
-            sx={{ width: "100%" }}
-          >
-            {alert?.message}
-          </Alert>
-        </Snackbar>
+          anchorOrigin={{ vertical: "top", horizontal: "middle" }}
+          message={alert?.message}
+        />
       )}
     </>
   );
