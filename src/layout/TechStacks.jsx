@@ -10,7 +10,7 @@ export default function TechStacks() {
         id="techStacks"
         sx={{
           py: { xs: 2, md: 4 },
-          px: { xs: 0, md: 4 },
+          px: { xs: 2, md: 4 },
           width: "100%",
           bgcolor: "transparent",
           backgroundImage: `url(${TechStackBg})`,
@@ -20,6 +20,7 @@ export default function TechStacks() {
           backgroundBlendMode: "overlay",
           backgroundColor: "rgba(0, 0, 0, 0.9)",
           alignItems: "center",
+          borderRadius: { xs: "8px", md: 0 }
         }}
       >
         <Header

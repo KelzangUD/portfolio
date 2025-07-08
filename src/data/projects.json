@@ -2,9 +2,10 @@
   {
     "id": 1,
     "title": "Portfolio",
-    "description": "In this showcase, I present a carefully curated selection of projects that reflect my commitment to excellence in web development. Each project is a testament to my passion for crafting intuitive and visually compelling digital experiences. Explore the synergy of design and functionality as I walk you through a journey of successful collaborations and impactful solutions that define my expertise as a web developer.",
+    "intro": "The goal of this project was to maintain a personal portfolio. This portfolio is not meant to showcase my skills, but rather to serve as a platform for sharing my projects and experiences. It is a place where I can document my journey and the things I have learned along the way.",
+    "description": "React Js and MUI is used to build this portfolio. Axios is used to send request to Strapi Cloud. The project is hosted on Vercel, and the content is managed using Strapi Cloud. GitHub is used for version-control, and analytics are tracked using PostHog.",
     "role": "Full-Stack Developer",
-    "techStacks": "React JS, MUI, Axios, Strapi, Vercel, GitHub",
+    "techStacks": "React JS, MUI, Axios, Strapi Cloud, Vercel, GitHub, PostHog",
     "url": "https://vercel.com/kelzanguds-projects/portfolio/4UWL4rbkz9Kf1gvncFVagwiHGgLt",
     "img_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio.jpg",
     "mock_up_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio_mockup.png",

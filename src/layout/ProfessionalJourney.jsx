@@ -9,7 +9,8 @@ export default function ProfessionalJourney() {
       <Box
         id="professionalJourney"
         sx={{
-          py: 4,
+          py: { xs: 2, md: 4 },
+          px: { xs: 2, md: 4 },
           width: "100%",
           backgroundImage: `url(${ProfessionalBg})`,
           backgroundRepeat: "no-repeat",
@@ -17,6 +18,8 @@ export default function ProfessionalJourney() {
           backgroundPosition: "center",
           backgroundBlendMode: "overlay",
           backgroundColor: "rgba(0, 0, 0, 0.9)",
+          borderRadius: { xs: "8px", md: 0 },
+          overflow: "hidden"
         }}
       >
         <Header

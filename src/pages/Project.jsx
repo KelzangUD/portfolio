@@ -63,6 +63,15 @@ export default function Project() {
               color: "rgb(255 255 255 / 70%)",
             }}
           >
+            {project?.intro}
+          </Typography>
+          <Typography
+            sx={{
+              mt: 2,
+              textAlign: "justify",
+              color: "rgb(255 255 255 / 70%)",
+            }}
+          >
             {project?.description}
           </Typography>
           <Typography

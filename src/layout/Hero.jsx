@@ -89,7 +89,7 @@ export default function Hero() {
                   color: "rgb(255 255 255 / 70%)",
                 }}
               >
-                Tech enthusiast from the Land of Thunder Dragon.
+                Just a eXplorer from the Land of Thunder Dragon.
               </Typography>
               <Stack
                 useFlexGap

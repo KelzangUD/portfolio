@@ -54,11 +54,11 @@ export default function Intro() {
               color: 'rgb(255 255 255 / 70%)',
             }}
           >
-            With a passion for crafting exceptional digital experiences, I bring
-            creativity and technical expertise to every project. Explore my
-            portfolio and discover the seamless fusion of innovation and design
-            that defines my work. Welcome to a journey where the art of web
-            development meets the mystical allure of the Land of Thunder Dragon.
+            Currently, am software developer in Tashi InfoComm Private
+            Limited. In my spare time, I enjoy creating contents on various
+            platform like YouTube, Instagram and TikTok.
+            My weekends and free days are usually spent hiking amidst the 
+            majestic landscapes of the Land of the Thunder Dragon.
           </Typography>
           <Stack useFlexGap sx={{ mt: 2, width: { xs: "100%", sm: "200px" } }}>
             <Button

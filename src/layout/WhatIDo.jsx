@@ -8,7 +8,7 @@ export default function WhatIDo() {
       <Box id="whatIDo" sx={{ py: { xs: 0, md: 4 }, mb: 6 }}>
         <Header
           header="What I Do?"
-          subheader="“I balance passion and purpose, constantly exploring, learning, and growing.”"
+          subheader="“I try to balance passion and purpose, constantly exploring, learning, and growing.”"
         />
         <Grid container spacing={2} sx={{ justifyContent: "space-between" }}>
           {whatIDoData?.map((item, index) => (

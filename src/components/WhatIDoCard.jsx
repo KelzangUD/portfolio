@@ -94,7 +94,7 @@ export default function WhatIDoCard({ item, index }) {
                 mb={2}
                 sx={{
                   textAlign: "justify",
-                  height: 250,
+                  height: 120,
                   overflow: "hidden",
                   lineHeight: 1.6,
                   color: 'rgb(255 255 255 / 70%)'
