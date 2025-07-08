@@ -9,6 +9,10 @@
       {
         "alt": "Pi-Top",
         "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/pi-top.svg"
+      },
+      {
+        "alt": "Raspberry Pi",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/Raspberry%20Pi.svg"
       }
     ]
   },
@@ -44,21 +48,18 @@
   {
     "title": "Software",
     "icons": [
-      {
-        "alt": "SolidWork",
-        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/solidworks.svg"
-      },
+
       {
         "alt": "Blender",
         "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/blender.svg"
       },
       {
-        "alt": "AutodeskEagle",
-        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/autodesk eagle.svg"
+        "alt": "Premiere Pro",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/premiere%20pro.svg"
       },
       {
-        "alt": "OrcadPSPice",
-        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/orcad pspice.svg"
+        "alt": "CapCut",
+        "url": "https://kelzangud.github.io/portfolio-assts/Tech-Stacks/capcut.svg"
       }
     ]
   }
