@@ -93,29 +93,23 @@ export default function Blogs() {
             <Search />
           </Box>
         </Box>
-        {
-          isLoading ? (
-            <Grid container spacing={3} columns={12}>
-              {Array.from({ length: 6 }).map((_, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Skeleton variant="rectangular" height={600} />
-                </Grid>
-              ))}
-            </Grid>
-          ) : blogs?.length === 0 ? (
-            <Typography
-              variant="h6"
-              sx={{ color: "#eee", textAlign: "center", width: "100%" }}
-            >
-              No blogs found
-            </Typography>
-          ) : null
-        }
-        <Grid container spacing={3} columns={12}>
-          {blogs?.map((item, index) => (
-            <BlogCard item={item} index={index} key={index} />
-          ))}
-        </Grid>
+        {isLoading ? (
+          <Grid container spacing={3} columns={12}>
+            <Skeleton
+              variant="rectangular"
+              height={600}
+              width="100%"
+              sx={{ bgcolor: "grey.900" }}
+            />
+          </Grid>
+        ) : (
+          <Grid container spacing={3} columns={12}>
+            {blogs?.map((item, index) => (
+              <BlogCard item={item} index={index} key={index} />
+            ))}
+          </Grid>
+        )}
+
         {/* <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 0 }}>
           <Pagination
             variant="outlined"

@@ -5,12 +5,10 @@ import ReactPlayer from "react-player";
 import vlogsData from "../data/vlogs.json";
 
 const StyledBox = styled("div")(({ theme }) => ({
-  padding: "0 32px",
   position: "relative",
   alignSelf: "center",
-  backgroundColor: "#000",
   borderRadius: (theme.vars || theme).shape.borderRadius,
-  outline: "6px solid",
+  outline: "4px solid",
   overflow: "hidden",
   border: "1px solid",
   transition: "all 0.3s ease-in-out",
@@ -72,14 +70,20 @@ export default function Vlogs() {
                 <Grid size={{ xs: 12, md: 6 }} key={item?.url}>
                   <Slide direction="up" triggerOnce>
                     <StyledBox>
-                      <ReactPlayer url={item?.url} controls width="100%" />
+                      <ReactPlayer
+                        url={item?.url}
+                        controls
+                        width="100%"
+                        light
+                        height={{ xs: "1000px", md: "318px" }}
+                      />
                     </StyledBox>
                     <Typography
                       variant="subtitle2"
                       sx={{
                         fontSize: "clamp(1rem, 2vw, 1rem)",
                         fontFamily: "Titan One, sans-serif",
-                        fontWeight: 100,
+                        fontWeight: 10,
                         marginTop: "16px",
                         color: "#eee",
                       }}
