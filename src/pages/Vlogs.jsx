@@ -75,7 +75,7 @@ export default function Vlogs() {
                         controls
                         width="100%"
                         light
-                        height={{ xs: "1000px", md: "318px" }}
+                        height="318px"
                       />
                     </StyledBox>
                     <Typography
