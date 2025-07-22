@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const GalleryCard = ({ item, index }) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const StyledCard = styled(Card)(({ theme }) => ({
     aspectRatio: item?.aspectRatio,
     position: "relative",
@@ -18,32 +18,32 @@ const GalleryCard = ({ item, index }) => {
     backgroundPosition: "center",
     transition: "background-size 0.3s ease-in-out, transform 0.3s ease-in-out",
     "&:hover": {
-      backgroundSize: "120%",
-      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${item?.url})`,
+      // backgroundSize: "120%",
+      // backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${item?.url})`,
       boxShadow: "0 0 24px 12px hsla(220, 50%, 70%, 0.4)",
       transform: "scale(1.01)",
       outlineColor: "hsla(220, 25%, 90%, 0.5)",
     },
-    "& .hoverContent": {
-      position: "absolute",
-      bottom: "10%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      color: "#fff",
-      opacity: 0,
-      transition: "opacity 0.3s ease-in-out",
-      pointerEvents: "none",
-    },
-    "&:hover .hoverContent": {
-      opacity: 1,
-      pointerEvents: "auto",
-    },
+    // "& .hoverContent": {
+    //   position: "absolute",
+    //   bottom: "10%",
+    //   left: "50%",
+    //   transform: "translate(-50%, -50%)",
+    //   color: "#fff",
+    //   opacity: 0,
+    //   transition: "opacity 0.3s ease-in-out",
+    //   pointerEvents: "none",
+    // },
+    // "&:hover .hoverContent": {
+    //   opacity: 1,
+    //   pointerEvents: "auto",
+    // },
   }));
   return (
     <Grid size={{ xs: 12, md: item?.md, flexGrow: 1 }}>
       <Fade delay={100 * index} duration={1000} triggerOnce fraction={0.5}>
         <StyledCard>
-          <div className="hoverContent">
+          {/* <div className="hoverContent">
             <Typography
               variant="h1"
               sx={{
@@ -54,7 +54,7 @@ const GalleryCard = ({ item, index }) => {
             >
               {item?.alt}
             </Typography>
-          </div>
+          </div> */}
         </StyledCard>
       </Fade>
     </Grid>

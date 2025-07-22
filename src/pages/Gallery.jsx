@@ -30,7 +30,7 @@ export default function Gallery() {
         >
           Gallery
         </Typography>
-        <Grid container spacing={2} columns={12} my={4}>
+        <Grid container spacing={1} columns={12} my={4}>
           {galleryData?.map((item, index) => (
             <GalleryCard item={item} index={index} key={item?.id} />
           ))}
