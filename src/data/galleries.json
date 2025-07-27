@@ -52,8 +52,8 @@
     "id": 7,
     "aspectRatio": "3/3.7",
     "md": 3,
-    "alt": "Gayney Lhatsho Hike",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/Gayney%20Lhatsho%20Hike.png"
+    "alt": "Tango",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/Tango.png"
   },
   {
     "id": 8,
@@ -101,8 +101,8 @@
     "id": 14,
     "aspectRatio": "3/3.7",
     "md": 3,
-    "alt": "Tango",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/Tango.png"
+    "alt": "Jichu Draki",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jichu%20draki.png"
   },
   {
     "id": 15,
@@ -129,8 +129,8 @@
     "id": 18,
     "aspectRatio": "3/3.7",
     "md": 3,
-    "alt": "Jichu Draki",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jichu%20draki.png"
+    "alt": "Jomolhari Festival",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jomolhari%20festival.png"
   },
   {
     "id": 19,
@@ -146,236 +146,224 @@
     "alt": "Jigme Langtsho Hike Team",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jigmelangtsho%20hike%20team.png"
   },
+  
   {
     "id": 21,
-    "aspectRatio": "3/3.7",
-    "md": 3,
-    "alt": "Jomolhari Festival",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jomolhari%20festival.png"
-  },
-  {
-    "id": 22,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Jomolhari Trek Team",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jomolhari%20trek%20team.png"
   },
   {
-    "id": 23,
+    "id": 22,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Jomolhari Trek",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jomolhari%20trek.png"
   },
   {
-    "id": 24,
+    "id": 23,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Jomolhari",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/jomolhari.png"
   },
   {
-    "id": 25,
+    "id": 24,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Kabisa to Dochula Hike 2",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/kabesa%20to%20dochula%20%20hike%202.png"
   },
   {
-    "id": 26,
+    "id": 25,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Kabisa to Dochula Hike 3",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/kabesa%20to%20dochula%20hike%203.png"
   },
   {
-    "id": 27,
+    "id": 26,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Kabisa to Dochula Hike 4",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/kabesa%20to%20dochula%20hike%204.png"
   },
   {
-    "id": 28,
+    "id": 27,
     "aspectRatio": "14/8.5",
     "md": 6,
     "alt": "Kabisa to Dochula Hike 4",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubstshonapata%20trek%20team.png"
   },
   {
-    "id": 29,
+    "id": 28,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Pumola",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/pumola.png"
   },
   {
-    "id": 23,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Kabisa to Dochula Hike 4",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubstshonapata.png"
-  },
-  {
-    "id": 30,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta base 2",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20base%202.png"
-  },
-  {
-    "id": 31,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20lake.png"
-  },
-  {
-    "id": 32,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 2",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%202.png"
-  },
-  {
-    "id": 33,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 3",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%203.png"
-  },
-  {
-    "id": 34,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 4",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%204.png"
-  },
-  {
-    "id": 35,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 5",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%205.png"
-  },
-  {
-    "id": 36,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 6",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%206.png"
-  },
-  {
-    "id": 37,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 7",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%207.png"
-  },
-  {
-    "id": 38,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 8",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%208.png"
-  },
-  {
-    "id": 39,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 9",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%209.png"
-  },
-  {
-    "id": 40,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek.png"
-  },
-  {
-    "id": 41,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta View",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20view.png"
-  },
-  {
-    "id": 42,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta Trek 10",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshopata%20trek.png"
-  },
-  {
-    "id": 43,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Nubstshonapta View 1",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nuntshonapata%20view%201.png"
-  },
-  {
-    "id": 44,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Pillar Lake",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/pillar%20lake.png"
-  },
-  {
-    "id": 45,
+    "id": 29,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Sagala Hike 1",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike%201.png"
   },
   {
-    "id": 46,
+    "id": 30,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Kabisa to Dochula Hike 4",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubstshonapata.png"
+  },
+  {
+    "id": 31,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta base 2",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20base%202.png"
+  },
+  {
+    "id": 32,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20lake.png"
+  },
+  {
+    "id": 33,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 2",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%202.png"
+  },
+  {
+    "id": 34,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 3",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%203.png"
+  },
+  {
+    "id": 35,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 4",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%204.png"
+  },
+  {
+    "id": 36,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 5",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%205.png"
+  },
+  {
+    "id": 37,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 6",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%206.png"
+  },
+  {
+    "id": 38,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 7",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%207.png"
+  },
+  {
+    "id": 39,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 8",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%208.png"
+  },
+  {
+    "id": 40,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 9",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek%209.png"
+  },
+  {
+    "id": 41,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20trek.png"
+  },
+  {
+    "id": 42,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta View",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshonapata%20view.png"
+  },
+  {
+    "id": 43,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta Trek 10",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nubtshopata%20trek.png"
+  },
+  {
+    "id": 44,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Nubstshonapta View 1",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/nuntshonapata%20view%201.png"
+  },
+  {
+    "id": 45,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Pillar Lake",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/pillar%20lake.png"
+  },
+  
+  {
+    "id": 47,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Sagala Hike 2",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike%202.png"
   },
   {
-    "id": 47,
+    "id": 48,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Sagala Hike 3",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike%203.png"
   },
   {
-    "id": 48,
+    "id": 49,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Sagala Hike 4",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike%204.png"
   },
   {
-    "id": 49,
+    "id": 50,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Sagala Hike Team",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike%20team.png"
   },
   {
-    "id": 50,
+    "id": 51,
     "aspectRatio": "14/8.5",
     "md": 6,
     "alt": "Sagala Hike",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sagala%20hike.png"
   },
   {
-    "id": 51,
+    "id": 52,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Solo Hike",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/solo%20hike.png"
-  },
-  {
-    "id": 52,
-    "aspectRatio": "14/8.5",
-    "md": 6,
-    "alt": "Sickle lake",
-    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sickle%20lake.png"
   },
   {
     "id": 53,
@@ -386,30 +374,38 @@
   },
   {
     "id": 54,
+    "aspectRatio": "14/8.5",
+    "md": 6,
+    "alt": "Sickle lake",
+    "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/sickle%20lake.png"
+  },
+  
+  {
+    "id": 55,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Thuji Dra View",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/thuji%20dra%20view.png"
   },
   {
-    "id": 55,
+    "id": 56,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Thuji Dra",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/thuji%20dra.png"
   },
   {
-    "id": 56,
+    "id": 57,
     "aspectRatio": "14/8.5",
     "md": 6,
     "alt": "Tshophu view 2",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/tshophu%20view%202.png"
   },
-  {
-    "id": 57,
+   {
+    "id": 58,
     "aspectRatio": "3/3.7",
     "md": 3,
     "alt": "Tshophu view 1",
     "url": "https://raw.githubusercontent.com/KelzangUD/portfolio-assts/refs/heads/main/Gallery/tshophu%20view.png"
-  }
+  } 
 ]
