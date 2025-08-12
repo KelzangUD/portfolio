@@ -221,7 +221,7 @@ export const inputsCustomizations = {
         [`& .${toggleButtonGroupClasses.selected}`]: {
           color: "#fff",
         },
-        boxShadow: `0 4px 16px ${alpha(brand[700], 0.5)}`,
+        // boxShadow: `0 4px 16px ${alpha(brand[700], 0.5)}`,
       }),
     },
   },

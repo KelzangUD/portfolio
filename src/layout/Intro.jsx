@@ -47,7 +47,7 @@ export default function Intro() {
           </Typography>
           <Typography
             sx={{
-              color: "text.secondary",
+              // color: "text.secondary",
               lineHeight: 2,
               my: 2,
               textAlign: "justify",

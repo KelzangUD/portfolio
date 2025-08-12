@@ -15,11 +15,11 @@
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "markdown-to-jsx": "^7.7.3",
-    "posthog-js": "^1.256.2",
-    "react": "^18.3.1",
+    "posthog-js": "^1.259.0",
+    "react": "^19.1.1",
     "react-animated-numbers": "^1.0.0",
     "react-awesome-reveal": "^4.3.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.1.1",
     "react-player": "^2.16.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
@@ -50,7 +50,7 @@
     ]
   },
   "engines": {
-    "node": "18.x",
+    "node": "22.x",
     "npm": "9.x"
   }
 }
