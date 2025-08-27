@@ -41,30 +41,32 @@ function App(props) {
     }, 500);
   }, []);
   return (
-    <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
-      <HeroBox>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <AppAppBar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about-me" element={<AboutMe />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/:id" element={<Project />} />
-              <Route path="/blogs" element={<Blogs />} />
-              <Route path="/blogs/:id" element={<Blog />} />
-              <Route path="/vlogs" element={<Vlogs />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/contact-me" element={<ContactMe />} />
-            </Routes>
-            <Footer />
-          </>
-        )}
-      </HeroBox>
-    </AppTheme>
+    <>
+      <AppTheme {...props}>
+        <CssBaseline enableColorScheme />
+        <HeroBox>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <AppAppBar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about-me" element={<AboutMe />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/projects/:id" element={<Project />} />
+                <Route path="/blogs" element={<Blogs />} />
+                <Route path="/blogs/:id" element={<Blog />} />
+                <Route path="/vlogs" element={<Vlogs />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/contact-me" element={<ContactMe />} />
+              </Routes>
+              <Footer />
+            </>
+          )}
+        </HeroBox>
+      </AppTheme>
+    </>
   );
 }
 
