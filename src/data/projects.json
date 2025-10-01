@@ -6,9 +6,21 @@
     "description": "React Js and MUI is used to build this portfolio. Axios is used to send request to Strapi Cloud. The project is hosted on Vercel, and the content is managed using Strapi Cloud. GitHub is used for version-control, and analytics are tracked using PostHog.",
     "role": "Full-Stack Developer",
     "techStacks": "React JS, MUI, Axios, Strapi Cloud, Vercel, GitHub, PostHog",
-    "url": "https://vercel.com/kelzanguds-projects/portfolio/4UWL4rbkz9Kf1gvncFVagwiHGgLt",
+    "url": "https://www.kelzangud.com/",
     "img_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio.jpg",
     "mock_up_url": "https://kelzangud.github.io/portfolio-assts/Projects/portfolio_mockup.png",
     "date": "2025-05-07"
+  },
+  {
+    "id": 2,
+    "title": "MoESD Revamps",
+    "intro": "The existing MoESD website, originally built with WordPress, has been completely revamped using Next.js. ",
+    "description": "My primary goal for this project was to gain hands-on proficiency with the Next.js framework and web design principles. The implementation was guided by a design created in Figma and styled using Tailwind CSS. Development specifically focused on ensuring an optimal experience for two key breakpoints: small screens (≤640px) and large screens (>1280px). Importantly, the site is built using static content only, and a Content Management System (CMS) was intentionally excluded.",
+    "role": "Full-Stack Developer",
+    "techStacks": "Next.js, Tailwind CSS, Figma",
+    "url": "https://moesd.vercel.app/",
+    "img_url": "https://kelzangud.github.io/portfolio-assts/Projects/moesd.jpg",
+    "mock_up_url": "https://kelzangud.github.io/portfolio-assts/Projects/moesd_mockpup.png",
+    "date": "2025-10-01"
   }
 ]
