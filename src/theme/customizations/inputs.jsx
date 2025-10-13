@@ -353,4 +353,72 @@ export const inputsCustomizations = {
       }),
     },
   },
+  MuiAutocomplete: {
+    styleOverrides: {
+      inputRoot: ({ theme }) => ({
+        color: (theme.vars || theme).palette.text.primary,
+        borderRadius: (theme.vars || theme).shape.borderRadius,
+        backgroundColor: (theme.vars || theme).palette.background.default,
+        transition: "border 120ms ease-in",
+        "&:hover": {
+          borderColor: "#9e9e9e",
+        },
+        [`&.${outlinedInputClasses.focused}`]: {
+          outline: `3px solid ${alpha("#000", 0.5)}`,
+          borderColor: "#000",
+        },
+      }),
+
+      input: {
+        padding: 0,
+        "&::placeholder": {
+          color: "#9e9e9e",
+          opacity: 1, // ✅ Make sure placeholder stays visible
+        },
+      },
+
+      paper: ({ theme }) => ({
+        borderRadius: (theme.vars || theme).shape.borderRadius,
+        border: `1px solid ${(theme.vars || theme).palette.divider}`,
+        backgroundColor: (theme.vars || theme).palette.background.default,
+        color: (theme.vars || theme).palette.text.primary,
+        boxShadow: theme.shadows[3],
+      }),
+
+      option: ({ theme }) => ({
+        fontSize: theme.typography.body2.fontSize,
+        borderRadius: (theme.vars || theme).shape.borderRadius,
+        "&[aria-selected='true']": {
+          backgroundColor: alpha("#000", 0.08),
+        },
+        "&.Mui-focused": {
+          backgroundColor: alpha("#000", 0.12),
+        },
+      }),
+
+      popupIndicator: {
+        color: "#fff",
+        backgroundColor: "transparent",
+        border: "none",
+        transition: "all 120ms ease-in",
+        "&:hover": {
+          backgroundColor: "transparent",
+        },
+        "&.Mui-disabled": {
+          color: "#9e9e9e",
+          backgroundColor: "inherit",
+        },
+      },
+
+      clearIndicator: {
+        color: "#fff",
+        backgroundColor: "transparent",
+        border: "none",
+        transition: "all 120ms ease-in",
+        "&:hover": {
+          backgroundColor: "inherit",
+        },
+      },
+    },
+  },
 };
